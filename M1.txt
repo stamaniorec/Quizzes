@@ -1,0 +1,6 @@
+1. Set up a MySQL database. 
+2. Display a list of available quizzes.
+3. Client will be able to attempt it and get a result. 
+
+If we have time left,
+4. Client will be able to create quiz through forms.
