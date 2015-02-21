@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @quiz.name %>
+</p>
+
+<% if @quiz_variant.nil? %>
+	<p>This quiz is empty.</p>
+<% else %>
+	<form action="">
+	<% @quiz_variant.questions.each do |question| %>
+		<p><%= question.prompt %></p>
+		
+		<% question.answers.each do |answer| %>
+			<input type="radio" name="whatever" value=""><%= answer.text %><br>
+		<% end %>
+	<% end %>
+	</form>
+<% end %>
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>
