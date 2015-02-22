@@ -2,6 +2,7 @@ require 'quiz_master'
 
 class QuizzesController < ApplicationController
   before_action :set_quiz, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /quizzes
   # GET /quizzes.json
@@ -17,7 +18,7 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/new
   def new
-    @quiz = Quiz.new
+    @quiz = current_user.quizzes.build
   end
 
   # GET /quizzes/1/edit
@@ -27,7 +28,7 @@ class QuizzesController < ApplicationController
   # POST /quizzes
   # POST /quizzes.json
   def create
-    @quiz = Quiz.new(quiz_params)
+    @quiz = current_user.quizzes.build(quiz_params)
 
     respond_to do |format|
       if @quiz.save
