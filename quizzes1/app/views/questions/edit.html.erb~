@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', quiz_path %> |
+<%= link_to 'Show', create_quiz_question_path %> |
 <%= link_to 'Back', edit_quiz_path %>

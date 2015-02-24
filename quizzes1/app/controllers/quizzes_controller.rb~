@@ -1,7 +1,7 @@
 require 'quiz_master'
 
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: [:show, :edit, :update, :destroy, :create_question, :edit_question]
+  before_action :set_quiz, only: [:show, :edit, :update, :destroy, :create_question]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /quizzes
@@ -66,9 +66,6 @@ class QuizzesController < ApplicationController
   end
   
   def create_question
-  end
-  
-  def edit_question
   end
 
   private

@@ -15,7 +15,7 @@
     <% @quizzes.each do |quiz| %>
       <tr>
         <td><%= quiz.name %></td>
-        <td> <%= quiz.user.email %> </td>
+        <td> <%#= quiz.user.email %> </td>
         <td><%= link_to 'Show', quiz %></td>
         <% if quiz.user == current_user %>
           <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>

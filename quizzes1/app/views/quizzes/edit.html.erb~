@@ -5,9 +5,7 @@
 <% @quiz.question.all.each do |question| %>
 	<% answers = "" %>
 	<% 1.upto(6){|curr| answers+= "#{eval "question.ans#{curr}"}/"} %>
-	<p><%= "#{question.question}:#{answers}" %>
-	<%= link_to 'Edit Question', edit_quiz_question_path(question.id, @quiz.id) %> | 
-	<%= link_to 'Destroy Question', destroy_question_path(question.id, @quiz.id), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	<p><%= "#{question.question}:#{answers}" %><%= link_to 'Edit Question', edit_quiz_question_path(question.id, @quiz.id) %> | <%= link_to 'Destroy Question', question.id, @quiz.id, method: :delete, data: { confirm: 'Are you sure?' }, url: destroy_question_path %></p>
 <% end %>
 
 <%= link_to 'Create Question', create_quiz_question_path %> |
