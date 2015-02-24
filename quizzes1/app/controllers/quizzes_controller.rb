@@ -14,6 +14,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes/1.json
   def show
     @quiz_variant = build_quiz_variant
+    @score = Score.new
   end
 
   # GET /quizzes/new
