@@ -25,6 +25,9 @@
 <input type="hidden" name="user_id" value="<%= current_user.nil? ? -1 : current_user.id %>">
 <%= f.submit %>
 <% end %>
+<%= p @answer0 %>
+<%= p @answer1 %>
+<%= p @answer2 %>
 <br />
 <%= link_to 'Edit', edit_quiz_path(@quiz) %> |
 <%= link_to 'Back', quizzes_path %>

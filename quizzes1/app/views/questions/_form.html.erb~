@@ -31,7 +31,10 @@
     <%= f.label :correct %><br>
     <%= f.number_field :correct %>
   </div>
-  <%= f.hidden_field :quiz_id, :value => @question.quiz.id %>
+  <div class="field">
+    <%= f.label :quiz %><br>
+    <%= f.number_field :quiz %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

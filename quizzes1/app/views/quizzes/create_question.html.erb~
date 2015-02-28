@@ -1,0 +1,7 @@
+<h2>Add a question:</h2>
+<%= form_for([@quiz, @quiz.question.build]) %>
+  <%= render 'question_form' %>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

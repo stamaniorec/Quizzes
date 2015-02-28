@@ -113,7 +113,7 @@ class QuizzesController < ApplicationController
 
       quiz = QuizMaster::Quiz.new(quiz_content)
 
-      if quiz_content.empty?
+      unless quiz_content.empty?
         nil
       else
         answer_reorderings = quiz.answer_reordering_vectors
