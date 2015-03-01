@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228110214) do
+ActiveRecord::Schema.define(version: 20150228135544) do
 
   create_table "answers", primary_key: "answer_id", force: :cascade do |t|
     t.integer "question_id", limit: 4
     t.string  "value",       limit: 255
     t.boolean "is_correct",  limit: 1
+    t.boolean "anchored",    limit: 1
   end
 
   add_index "answers", ["question_id"], name: "question_id", using: :btree

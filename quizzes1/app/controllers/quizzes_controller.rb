@@ -99,7 +99,7 @@ class QuizzesController < ApplicationController
         question_hash = Hash.new
         question_hash[:prompt] = question.question
         
-		answers = Array.new
+		    answers = Array.new
         
         question.answer.all.each do |cur_answer|
        		answers << QuizMaster::Answer.new(cur_answer.value, cur_answer.is_correct)
