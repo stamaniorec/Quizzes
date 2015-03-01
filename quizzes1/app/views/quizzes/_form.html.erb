@@ -15,6 +15,16 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+    <%= f.fields_for :questions do |question_builder| %>
+      <%= render 'question_fields', f: question_builder %>
+    <% end %>
+    <br />
+    <div class="links">
+      <%= link_to_add_association 'Add Question', f, :questions %>
+    </div>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

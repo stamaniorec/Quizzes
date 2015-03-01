@@ -19,6 +19,6 @@ private
     end
 
 	def answer_params
-      params.require(:answer).permit(:answer, :value, :question_id)
+      params.require(:answer).permit(:question_id, :value, :is_correct, :anchored)
     end
 end

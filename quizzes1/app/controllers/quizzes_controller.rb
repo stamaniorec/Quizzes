@@ -21,6 +21,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes/new
   def new
     @quiz = current_user.quizzes.build
+    @quiz.questions.build
   end
 
   # GET /quizzes/1/edit
@@ -73,9 +74,6 @@ class QuizzesController < ApplicationController
   		flash[:notice] = 'Can be modified only by the owner.' 
   	end
   end
-  
-  def create_question
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -85,7 +83,11 @@ class QuizzesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quiz_params
-      params.require(:quiz).permit(:name)
+      params.require(:quiz).permit(
+        :name, 
+        questions_attributes: [:id, :question_id, :question, :quiz_id, :_destroy, 
+          answers_attributes: [:id, :answer_id, :question_id, :value, :is_correct, :anchored, :_destroy]
+        ])
     end
 
     # Builds a quiz variant out of a given quiz from the database
@@ -95,13 +97,13 @@ class QuizzesController < ApplicationController
     def build_quiz_variant
       quiz_content = Array.new
       
-      @quiz.question.all.each do |question|
+      @quiz.questions.all.each do |question|
         question_hash = Hash.new
         question_hash[:prompt] = question.question
         
 		    answers = Array.new
         
-        question.answer.all.each do |cur_answer|
+        question.answers.all.each do |cur_answer|
        		answers << QuizMaster::Answer.new(cur_answer.value, cur_answer.is_correct)
         end
 		
