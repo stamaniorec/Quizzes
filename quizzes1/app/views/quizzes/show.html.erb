@@ -13,7 +13,6 @@
 			<% question.answers.each_with_index do |answer, index2| %>
 				<input type="radio" name="answer[<%= index %>]" value="<%= index2 %>"><%= answer.text %><br>
 				<% correct_answer = index2 if answer.correct? %>
-				<% puts "correct #{answer.text} - #{index2}" if answer.correct? %>
 			<% end %>
 			<input type="hidden" name="correct[<%= index %>]" value="<%= correct_answer %>">
 		<% end %>
