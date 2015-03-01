@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :shuffled, "Do you want to shuffle the questions and the answers?" %>
+    <%= f.check_box :shuffled %>
+  </div>
+
+  <div class="field">
     <%= f.fields_for :questions do |question_builder| %>
       <%= render 'question_fields', f: question_builder %>
     <% end %>

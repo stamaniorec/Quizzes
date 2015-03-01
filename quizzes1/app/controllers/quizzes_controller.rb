@@ -84,7 +84,7 @@ class QuizzesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def quiz_params
       params.require(:quiz).permit(
-        :name, 
+        :name, :user_id, :shuffled,
         questions_attributes: [:id, :question_id, :question, :quiz_id, :_destroy, 
           answers_attributes: [:id, :answer_id, :question_id, :value, :is_correct, :anchored, :_destroy]
         ])
@@ -104,7 +104,7 @@ class QuizzesController < ApplicationController
 		    answers = Array.new
         
         question.answers.all.each do |cur_answer|
-       		answers << QuizMaster::Answer.new(cur_answer.value, cur_answer.is_correct)
+       		answers << QuizMaster::Answer.new(cur_answer.value, cur_answer.is_correct, anchored: cur_answer.anchored)
         end
 		
         question_hash[:answers] = answers
@@ -117,11 +117,13 @@ class QuizzesController < ApplicationController
 
       if quiz_content.empty?
         nil
-      else
+      elsif @quiz.shuffled?
         answer_reorderings = quiz.answer_reordering_vectors
         question_reordering = quiz.question_reordering_vector
 
         QuizMaster::QuizVariant.new(quiz, answer_reorderings, question_reordering)
+      else
+        quiz
       end
     end
 end

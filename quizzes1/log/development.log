@@ -32525,3 +32525,2388 @@ Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.
 
 
 Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:18:31 +0200
+
+
+Started GET "/quizzes" for 127.0.0.1 at 2015-03-01 16:23:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered quizzes/index.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 149ms (Views: 133.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:40 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 124ms (Views: 79.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:42 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 114ms (Views: 104.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:44 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:23:45 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 85ms (Views: 76.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:23:46 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9[0m
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 129ms (Views: 80.5ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:49 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 87ms (Views: 78.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:51 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 81ms (Views: 73.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:52 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 91ms (Views: 82.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:24:53 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6
+  [1m[36mAnswer Load (0.5ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 84ms (Views: 78.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuiz Load (0.6ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 103ms (Views: 92.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:54 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9[0m
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 95ms (Views: 84.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:55 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 86ms (Views: 75.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:56 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:24:57 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuiz Load (0.3ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 87ms (Views: 79.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:24:58 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddShuffledToQuiz (20150301142707)
+  [1m[35m (1235.9ms)[0m  ALTER TABLE `quizzes` ADD `shuffled` tinyint(1)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150301142707')
+  [1m[36m (43.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'answers'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `answers`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'questions'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `questions`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'quizzes'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `quizzes`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'scores'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `scores`
+  [1m[36m (0.8ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mQuiz Load (0.6ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `quizzes` SET `shuffled` = 0 WHERE `quizzes`.`quiz_id` = 1
+  [1m[36m (51.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `quizzes` SET `shuffled` = 0 WHERE `quizzes`.`quiz_id` = 2
+  [1m[36m (53.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `quizzes` SET `shuffled` = 1 WHERE `quizzes`.`quiz_id` = 3
+  [1m[36m (68.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `quizzes` SET `shuffled` = 1 WHERE `quizzes`.`quiz_id` = 6
+  [1m[36m (55.3ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'answers'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `answers`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'questions'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `questions`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'quizzes'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `quizzes`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'scores'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `scores`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:29:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+SyntaxError (/home/stamaniorec/github/Quizzes/quizzes1/app/controllers/quizzes_controller.rb:88: syntax error, unexpected tIDENTIFIER, expecting ')'
+        questions_attributes: [:id, :question_id, :questi...
+                            ^
+/home/stamaniorec/github/Quizzes/quizzes1/app/controllers/quizzes_controller.rb:90: syntax error, unexpected ')', expecting keyword_end
+/home/stamaniorec/github/Quizzes/quizzes1/app/controllers/quizzes_controller.rb:127: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/quizzes_controller.rb:88: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/controllers/quizzes_controller.rb:90: syntax error, unexpected ')', expecting keyword_end
+  app/controllers/quizzes_controller.rb:127: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (3.5ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (7.8ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (24.9ms)
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 185ms (Views: 125.9ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:57 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuiz Load (0.3ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 113ms (Views: 107.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:29:59 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 86ms (Views: 78.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:00 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuiz Load (0.3ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 86ms (Views: 79.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 86ms (Views: 79.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:02 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:30:03 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 79ms (Views: 72.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:30:04 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 122ms (Views: 88.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:16 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 81ms (Views: 75.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:31:17 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 89ms (Views: 81.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 85ms (Views: 79.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:18 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 81ms (Views: 75.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:19 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 93ms (Views: 87.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:20 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 86ms (Views: 78.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:22 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 84ms (Views: 74.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:23 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 92ms (Views: 83.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+
+
+Started GET "/quizzes/6" for 127.0.0.1 at 2015-03-01 16:31:24 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 6
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 9[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 10
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 12[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 96ms (Views: 88.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:25 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 84ms (Views: 79.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:27 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 88ms (Views: 81.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:28 +0200
+
+
+Started GET "/quizzes/2" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 2[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 76ms (Views: 72.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:31:30 +0200
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered quizzes/_answer_fields.html.erb (1.5ms)
+  Rendered quizzes/_question_fields.html.erb (11.7ms)
+  Rendered quizzes/_answer_fields.html.erb (0.9ms)
+  Rendered quizzes/_question_fields.html.erb (4.2ms)
+  Rendered quizzes/_form.html.erb (36.4ms)
+  Rendered quizzes/new.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 200ms (Views: 140.3ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:41 +0200
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered quizzes/_answer_fields.html.erb (0.8ms)
+  Rendered quizzes/_question_fields.html.erb (3.5ms)
+  Rendered quizzes/_answer_fields.html.erb (0.8ms)
+  Rendered quizzes/_question_fields.html.erb (3.3ms)
+  Rendered quizzes/_form.html.erb (11.8ms)
+  Rendered quizzes/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 83ms (Views: 79.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:52 +0200
+
+
+Started GET "/quizzes/1/edit" for 127.0.0.1 at 2015-03-01 16:32:58 +0200
+Processing by QuizzesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  Rendered quizzes/_answer_fields.html.erb (2.4ms)
+  Rendered quizzes/_answer_fields.html.erb (1.4ms)
+  Rendered quizzes/_answer_fields.html.erb (0.9ms)
+  Rendered quizzes/_answer_fields.html.erb (1.1ms)
+  Rendered quizzes/_answer_fields.html.erb (0.6ms)
+  Rendered quizzes/_question_fields.html.erb (15.6ms)
+  Rendered quizzes/_answer_fields.html.erb (0.5ms)
+  Rendered quizzes/_question_fields.html.erb (2.3ms)
+  Rendered quizzes/_form.html.erb (22.4ms)
+  Rendered quizzes/edit.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 127ms (Views: 119.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:32:59 +0200
+
+
+Started PATCH "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+Processing by QuizzesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rmN4augVaGA/HqOlpL5JrWfHFI5jmImgmO7jJbR12D/Qbz53CT0Ja02WYdfeCwY10zoosFLGmZnfPezBRBVYZQ==", "quiz"=>{"name"=>"General knowledge", "shuffled"=>"1", "questions_attributes"=>{"0"=>{"question"=>"When was Bulgaria founded?", "answers_attributes"=>{"0"=>{"value"=>"681", "is_correct"=>"1", "anchored"=>"0", "_destroy"=>"false", "id"=>"23"}, "1"=>{"value"=>"680", "is_correct"=>"0", "anchored"=>"0", "_destroy"=>"false", "id"=>"24"}, "2"=>{"value"=>"682", "is_correct"=>"0", "anchored"=>"0", "_destroy"=>"false", "id"=>"25"}, "3"=>{"value"=>"671", "is_correct"=>"0", "anchored"=>"0", "_destroy"=>"false", "id"=>"26"}}, "_destroy"=>"false", "id"=>"13"}}}, "commit"=>"Update Quiz", "id"=>"1"}
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1 AND `questions`.`question_id` = 13
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13 AND `answers`.`answer_id` IN (23, 24, 25, 26)[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `quizzes` SET `shuffled` = 1 WHERE `quizzes`.`quiz_id` = 1
+  [1m[36m (147.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/quizzes/1
+Completed 302 Found in 161ms (ActiveRecord: 149.3ms)
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 89ms (Views: 76.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:03 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:33:04 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuiz Load (0.3ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 81ms (Views: 74.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 79ms (Views: 75.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:05 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 82ms (Views: 75.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:06 +0200
+
+
+Started GET "/quizzes/1/edit" for 127.0.0.1 at 2015-03-01 16:33:07 +0200
+Processing by QuizzesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  Rendered quizzes/_answer_fields.html.erb (1.5ms)
+  Rendered quizzes/_answer_fields.html.erb (0.9ms)
+  Rendered quizzes/_answer_fields.html.erb (0.9ms)
+  Rendered quizzes/_answer_fields.html.erb (0.8ms)
+  Rendered quizzes/_answer_fields.html.erb (1.4ms)
+  Rendered quizzes/_question_fields.html.erb (15.8ms)
+  Rendered quizzes/_answer_fields.html.erb (0.6ms)
+  Rendered quizzes/_question_fields.html.erb (3.3ms)
+  Rendered quizzes/_form.html.erb (26.0ms)
+  Rendered quizzes/edit.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 116ms (Views: 109.6ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+Processing by QuizzesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DW6hFlteNBJ71gk5uhk2sSlPtH14yWi7wHM3dPefR1BzYucLunZVGQley0vArHkpnbKIQ0mXeIKHoDiQB//HCg==", "quiz"=>{"name"=>"General knowledge", "shuffled"=>"0", "questions_attributes"=>{"0"=>{"question"=>"When was Bulgaria founded?", "answers_attributes"=>{"0"=>{"value"=>"681", "is_correct"=>"1", "anchored"=>"0", "_destroy"=>"false", "id"=>"23"}, "1"=>{"value"=>"680", "is_correct"=>"0", "anchored"=>"0", "_destroy"=>"false", "id"=>"24"}, "2"=>{"value"=>"682", "is_correct"=>"0", "anchored"=>"0", "_destroy"=>"false", "id"=>"25"}, "3"=>{"value"=>"671", "is_correct"=>"0", "anchored"=>"0", "_destroy"=>"false", "id"=>"26"}}, "_destroy"=>"false", "id"=>"13"}}}, "commit"=>"Update Quiz", "id"=>"1"}
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1 AND `questions`.`question_id` = 13
+  [1m[36mAnswer Load (0.6ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13 AND `answers`.`answer_id` IN (23, 24, 25, 26)[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `quizzes` SET `shuffled` = 0 WHERE `quizzes`.`quiz_id` = 1
+  [1m[36m (80.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/quizzes/1
+Completed 302 Found in 101ms (ActiveRecord: 83.7ms)
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 82ms (Views: 75.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:10 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 86ms (Views: 79.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:11 +0200
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 84ms (Views: 76.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-01 16:33:12 +0200
