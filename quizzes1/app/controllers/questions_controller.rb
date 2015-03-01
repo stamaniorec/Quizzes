@@ -1,25 +1,27 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:show, :edit, :update, :destroy, :check_authentication]
+  # before_action :check_authentication, only: [:edit, :destroy]
 
   # GET /questions
   # GET /questions.json
-  def index
-    @questions = Question.all
-  end
+  # def index
+  #   @questions = Question.all
+  # end
 
   # GET /questions/1
   # GET /questions/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /questions/new
-  def new
-    @question = Question.new
-  end
+  # def new
+  #   @question = Question.new
+  #   @question.answers.build
+  # end
 
   # GET /questions/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /questions
   # POST /questions.json
@@ -68,8 +70,16 @@ class QuestionsController < ApplicationController
       @question = Question.find(params[:id])
     end
 
+	# def check_authentication
+	# 	if @question.quiz.user != current_user
+ #  		  redirect_to quizzes_path
+ #  		  flash[:notice] = 'Can be modified only by the owner.' 
+ #  	end
+	# end
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:question, :ans1, :ans2, :ans3, :ans4, :ans5, :ans6, :correct, :quiz_id)
+      params.require(:question).permit(:question, :quiz_id, answers_attributes: 
+        [:id, :answer_id, :question_id, :value, :is_correct, :anchored, :_destroy]
+      )
     end
 end

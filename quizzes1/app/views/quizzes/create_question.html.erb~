@@ -1,4 +1,0 @@
-<h2>Add a question:</h2>
-<%= form_for([@quiz, @quiz.question.build]) do |f| %>
-	<%= render 'form1' %>
-<% end %>

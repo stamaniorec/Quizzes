@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Score:</strong>
-  <%= @score.score %>
+<strong>Score:</strong>
+<%= @score.score %>
 </p>
-
 <p>
-  <strong>Quiz:</strong>
-  <%= @score.quiz %>
+<strong>Quiz:</strong>
+<%= @score.quiz %>
 </p>
-
 <%= link_to 'Edit', edit_score_path(@score) %> |
 <%= link_to 'Back', quizzes_path %> <!-- scores_path --> 
