@@ -11,25 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224113220) do
+ActiveRecord::Schema.define(version: 20150301142707) do
+
+  create_table "answers", primary_key: "answer_id", force: :cascade do |t|
+    t.integer "question_id", limit: 4
+    t.string  "value",       limit: 255
+    t.boolean "is_correct",  limit: 1
+    t.boolean "anchored",    limit: 1
+  end
+
+  add_index "answers", ["question_id"], name: "question_id", using: :btree
 
   create_table "questions", primary_key: "question_id", force: :cascade do |t|
     t.string  "question", limit: 50, null: false
-    t.string  "ans1",     limit: 50, null: false
-    t.string  "ans2",     limit: 50, null: false
-    t.string  "ans3",     limit: 50
-    t.string  "ans4",     limit: 50
-    t.string  "ans5",     limit: 50
-    t.string  "ans6",     limit: 50
-    t.integer "correct",  limit: 4,  null: false
     t.integer "quiz_id",  limit: 4,  null: false
   end
 
   add_index "questions", ["quiz_id"], name: "quiz_id", using: :btree
 
   create_table "quizzes", primary_key: "quiz_id", force: :cascade do |t|
-    t.string  "name",    limit: 50, null: false
-    t.integer "user_id", limit: 4
+    t.string  "name",     limit: 50, null: false
+    t.integer "user_id",  limit: 4
+    t.boolean "shuffled", limit: 1
   end
 
   create_table "scores", primary_key: "score_id", force: :cascade do |t|

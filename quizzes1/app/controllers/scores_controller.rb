@@ -25,18 +25,17 @@ class ScoresController < ApplicationController
   # POST /scores.json
   def create
     num_questions = params[:answer].length
-    num_correct = 0
+  	num_correct = 0
+  	0.upto(num_questions - 1) do |question_index|
+  		answered_correctly = params[:answer][question_index.to_s] == params[:correct][question_index.to_s]
+  		num_correct += 1 if answered_correctly
+  	end
 
-    0.upto(num_questions - 1) do |question_index|
-      answered_correctly = params[:answer][question_index.to_s] == params[:correct][question_index.to_s]
-      num_correct += 1 if answered_correctly
-    end
+  	score = num_correct / num_questions.to_f * 100 # convert to percentage
 
-    score = num_correct / num_questions.to_f * 100 # convert to percentage
+  	# code smell
+  	@score = Score.new(score: score.to_i, quiz_id: params[:quiz_id], user_id: params[:user_id])
 
-    # code smell
-    @score = Score.new(score: score.to_i, quiz_id: params[:quiz_id], user_id: params[:user_id])
-    
     respond_to do |format|
       if @score.save
         format.html { redirect_to @score, notice: 'Score was successfully created.' }

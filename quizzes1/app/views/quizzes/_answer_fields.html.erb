@@ -1,0 +1,13 @@
+<div class="nested-fields">
+  <br>
+  <%= f.label :value, 'Answer: ' %><br>
+  <%= f.text_field :value %>
+
+  <%= f.label :is_correct, 'Correct?' %>
+  <%= f.check_box :is_correct %>
+
+  <%= f.label :anchored, 'Anchored?' %>
+  <%= f.check_box :anchored %><br>
+
+  <%= link_to_remove_association 'Remove Answer', f %>
+</div>
