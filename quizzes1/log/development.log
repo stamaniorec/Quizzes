@@ -45792,3 +45792,663 @@ Processing by UsersController#show as HTML
   Rendered users/show.html.erb within layouts/application (21.2ms)
   [1m[35mUser Load (1.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
 Completed 200 OK in 507ms (Views: 485.1ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-02 21:35:03 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (70.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (0.7ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (9.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (3.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered quizzes/index.html.erb within layouts/application (255.4ms)
+Completed 200 OK in 1405ms (Views: 1226.2ms | ActiveRecord: 38.1ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:35:05 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:35:05 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-02 21:35:05 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:35:05 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-02 21:35:05 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-02 21:35:05 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-02 21:35:05 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:35:06 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-02 21:35:06 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:35:06 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:35:06 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-02 21:35:06 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-02 21:35:06 +0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-02 21:35:08 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (48.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (332.0ms)
+Completed 200 OK in 841ms (Views: 828.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-02 21:35:14 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxEAFE/qeGYkngWzL1ge96/WlCHEUSli2l0RBSO6I4o6guALoP3rhMmIVhD6UQJZuw2i4Ir2qhxR82P6aOVlzQ==", "user"=>{"email"=>"maily@mailinator.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'maily@mailinator.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (3.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (49.9ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-03-02 06:39:36.000000', `current_sign_in_at` = '2015-03-02 19:35:14.588550', `sign_in_count` = 10, `updated_at` = '2015-03-02 19:35:14.600786' WHERE `users`.`id` = 1
+  [1m[36m (54.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 399ms (ActiveRecord: 107.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-02 21:35:14 +0200
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (5.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (5.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  Rendered quizzes/index.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 529ms (Views: 515.2ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-02 21:35:18 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
+  [1m[36mQuiz Load (0.8ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1[0m
+  [1m[35mScore Load (7.0ms)[0m  SELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1
+  [1m[36mQuiz Load (1.6ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (97.7ms)
+Completed 500 Internal Server Error in 215ms
+
+ActionView::Template::Error (undefined method `created_at' for #<Score:0xb1da500>):
+    15: 		<tr>
+    16: 			<td><%= score.quiz.name %></td> 
+    17: 			<td><%= score.score %></td> 
+    18: 			<td><%= score.created_at %></td>
+    19: 		</tr>
+    20: 	<% end %>
+    21: <table>
+  app/views/users/show.html.erb:18:in `block in _app_views_users_show_html_erb__431767305_92003090'
+  app/views/users/show.html.erb:14:in `_app_views_users_show_html_erb__431767305_92003090'
+
+
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (40.1ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (18.1ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.5ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (149.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-02 21:35:20 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (2.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1
+  [1m[36mScore Load (2.9ms)[0m  [1mSELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1[0m
+  [1m[35mQuiz Load (4.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (28.1ms)
+Completed 500 Internal Server Error in 63ms
+
+ActionView::Template::Error (undefined method `created_at' for #<Score:0xbe30b4c>):
+    15: 		<tr>
+    16: 			<td><%= score.quiz.name %></td> 
+    17: 			<td><%= score.score %></td> 
+    18: 			<td><%= score.created_at %></td>
+    19: 		</tr>
+    20: 	<% end %>
+    21: <table>
+  app/views/users/show.html.erb:18:in `block in _app_views_users_show_html_erb__431767305_99831130'
+  app/views/users/show.html.erb:14:in `_app_views_users_show_html_erb__431767305_99831130'
+
+
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (48.0ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (21.8ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (6.9ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.5ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (173.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-02 21:42:28 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1[0m
+  [1m[35mScore Load (4.4ms)[0m  SELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1
+  [1m[36mQuiz Load (2.7ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (34.6ms)
+Completed 500 Internal Server Error in 61ms
+
+ActionView::Template::Error (undefined method `created_on' for #<Score:0xd1cdf4c>):
+    15: 		<tr>
+    16: 			<td><%= score.quiz.name %></td> 
+    17: 			<td><%= score.score %></td> 
+    18: 			<td><%= score.created_on %></td>
+    19: 		</tr>
+    20: 	<% end %>
+    21: <table>
+  app/views/users/show.html.erb:18:in `block in _app_views_users_show_html_erb__431767305__622184388'
+  app/views/users/show.html.erb:14:in `_app_views_users_show_html_erb__431767305__622184388'
+
+
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (47.3ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (20.9ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.5ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (172.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-02 21:43:52 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (4.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1
+  [1m[36mScore Load (4.5ms)[0m  [1mSELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1[0m
+  [1m[35mQuiz Load (0.7ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuiz Load (0.8ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1[0m
+  [1m[35mQuiz Load (1.1ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 3 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (28.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 500ms (Views: 482.5ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:43:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddTimestampToScores (20150302194708)
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/dtrz/ruby/rails/quizzes7/db/migrate/20150302194708_add_timestamp_to_scores.rb:4)
+  [1m[35m (288.8ms)[0m  ALTER TABLE `scores` ADD `created_at` datetime
+  [1m[36m (211.6ms)[0m  [1mALTER TABLE `scores` ADD `updated_at` datetime[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (2.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150302194708')[0m
+  [1m[35m (34.0ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (6.8ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'answers'
+
+  [1m[36m (0.5ms)[0m  [1mSHOW CREATE TABLE `answers`[0m
+  [1m[35m (0.9ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'questions'
+
+  [1m[36m (0.5ms)[0m  [1mSHOW CREATE TABLE `questions`[0m
+  [1m[35m (0.9ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'quizzes'
+
+  [1m[36m (0.5ms)[0m  [1mSHOW CREATE TABLE `quizzes`[0m
+  [1m[35m (5.1ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'scores'
+
+  [1m[36m (0.5ms)[0m  [1mSHOW CREATE TABLE `scores`[0m
+  [1m[35m (0.9ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.5ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-02 21:49:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (5.0ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (3.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (2.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (2.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  Rendered quizzes/index.html.erb within layouts/application (215.7ms)
+Completed 200 OK in 1197ms (Views: 1053.5ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:49:12 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:49:12 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-02 21:49:12 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-02 21:49:12 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:49:12 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:13 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:13 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:13 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:13 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:13 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:13 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:13 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:13 +0200
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-02 21:49:16 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1[0m
+  [1m[35mScore Load (3.1ms)[0m  SELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mQuiz Load (0.6ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 3 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (90.9ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 539ms (Views: 456.0ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-02 21:49:28 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
+  [1m[36mQuiz Load (3.5ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1[0m
+  [1m[35mScore Load (3.6ms)[0m  SELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1
+  [1m[36mQuiz Load (3.8ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuiz Load (2.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mQuiz Load (2.1ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 3 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (31.3ms)
+  [1m[35mUser Load (7.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 510ms (Views: 476.3ms | ActiveRecord: 27.8ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-02 21:49:29 +0200
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-02 21:49:50 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1[0m
+  [1m[35mScore Load (2.6ms)[0m  SELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1
+  [1m[36mQuiz Load (4.8ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (41.5ms)
+Completed 500 Internal Server Error in 71ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    15: 		<tr>
+    16: 			<td><%= score.quiz.name %></td> 
+    17: 			<td><%= score.score %></td> 
+    18: 			<td><%= score.created_at.to_s(:pretty) %></td>
+    19: 		</tr>
+    20: 	<% end %>
+    21: <table>
+  app/views/users/show.html.erb:18:in `to_s'
+  app/views/users/show.html.erb:18:in `block in _app_views_users_show_html_erb___694900193_101432610'
+  app/views/users/show.html.erb:14:in `_app_views_users_show_html_erb___694900193_101432610'
+
+
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (45.3ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (21.9ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (7.1ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (8.4ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (173.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-02 21:51:24 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuiz Load (2.5ms)[0m  SELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1[0m
+  [1m[35mQuiz Load (2.1ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (27.9ms)
+Completed 500 Internal Server Error in 60ms
+
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    15: 		<tr>
+    16: 			<td><%= score.quiz.name %></td> 
+    17: 			<td><%= score.score %></td> 
+    18: 			<td><%= score.created_at.strftime("%b %d, %Y") %></td>
+    19: 		</tr>
+    20: 	<% end %>
+    21: <table>
+  app/views/users/show.html.erb:18:in `block in _app_views_users_show_html_erb___694900193_95169390'
+  app/views/users/show.html.erb:14:in `_app_views_users_show_html_erb___694900193_95169390'
+
+
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (69.4ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (20.7ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (8.0ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (192.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-02 21:52:42 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
+  [1m[36mQuiz Load (4.8ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1[0m
+  [1m[35mScore Load (4.1ms)[0m  SELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1
+  [1m[36mQuiz Load (1.8ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuiz Load (5.6ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 3 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (33.5ms)
+  [1m[35mUser Load (1.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 479ms (Views: 451.0ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:52:42 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:52:42 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-02 21:52:43 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to RemoveDateFromScores (20150302195408)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to RemoveDateFromScores (20150302195408)
+  [1m[35m (233.6ms)[0m  ALTER TABLE `scores` DROP `date`
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150302195408')
+  [1m[36m (31.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.9ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'answers'
+[0m
+  [1m[35m (0.5ms)[0m  SHOW CREATE TABLE `answers`
+  [1m[36m (0.9ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'questions'
+[0m
+  [1m[35m (0.5ms)[0m  SHOW CREATE TABLE `questions`
+  [1m[36m (0.9ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'quizzes'
+[0m
+  [1m[35m (0.5ms)[0m  SHOW CREATE TABLE `quizzes`
+  [1m[36m (5.9ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'scores'
+[0m
+  [1m[35m (0.6ms)[0m  SHOW CREATE TABLE `scores`
+  [1m[36m (0.9ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'quiz_website'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.5ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-02 21:58:16 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (4.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (4.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  Rendered quizzes/index.html.erb within layouts/application (291.8ms)
+Completed 200 OK in 1269ms (Views: 1099.4ms | ActiveRecord: 23.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-02 21:58:20 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
+  [1m[36mQuiz Load (4.5ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1[0m
+  [1m[35mScore Load (5.1ms)[0m  SELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1
+  [1m[36mQuiz Load (0.5ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m
+  [1m[35mQuiz Load (2.2ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mQuiz Load (7.7ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 3 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (88.8ms)
+  [1m[35mUser Load (1.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 644ms (Views: 547.5ms | ActiveRecord: 28.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-03-02 21:58:22 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cwjUKykq3v64CCfPSR/ogqxiOcVSG3YZhgwz3PBfNd0tGECSgcBAZmY8OyE8FtrSSuaFLA30cbf2bM1ivoLdVA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.7ms)[0m  BEGIN
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-02 21:58:23 +0200
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered quizzes/index.html.erb within layouts/application (62.4ms)
+Completed 200 OK in 579ms (Views: 573.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-02 21:58:25 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (45.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (153.2ms)
+Completed 200 OK in 521ms (Views: 511.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-02 21:58:34 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ffw3B+MkZDkdcU7KqLzjG16aRFcUq5g8zNhcwKruJ/Fr1SCcqZzTx4IKBRMeGcoX/UkL1zTuoLMZHSIU5SFwHA==", "user"=>{"email"=>"maily2@mailinator.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'maily2@mailinator.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-03-02 07:59:02.000000', `current_sign_in_at` = '2015-03-02 19:58:34.424240', `sign_in_count` = 8, `updated_at` = '2015-03-02 19:58:34.435455' WHERE `users`.`id` = 2
+  [1m[36m (37.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 269ms (ActiveRecord: 39.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-02 21:58:34 +0200
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (8.5ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (4.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  Rendered quizzes/index.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 474ms (Views: 455.6ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-03-02 21:58:39 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (10.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 468ms (Views: 463.3ms | ActiveRecord: 3.1ms)

@@ -1,0 +1,5 @@
+class RemoveDateFromScores < ActiveRecord::Migration
+  def change
+  	remove :scores, :date
+  end
+end
