@@ -1,0 +1,8 @@
+class AddTimeToScores < ActiveRecord::Migration
+  def change
+  	change_table :scores do |t|
+      t.date :time
+      t.time :date
+    end
+  end
+end

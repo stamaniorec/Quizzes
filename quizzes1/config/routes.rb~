@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   
-  #Questions routes
+  #Quizzes routes
   patch "/quizzes/:quiz_id/questions/:id" => "questions#update", :as => "update_question"
   delete "/quizzes/:quiz_id/questions/:id" => "questions#delete", :as => "destroy_question"
   

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150301142707) do
+ActiveRecord::Schema.define(version: 20150302073611) do
 
   create_table "answers", primary_key: "answer_id", force: :cascade do |t|
     t.integer "question_id", limit: 4
@@ -36,9 +36,10 @@ ActiveRecord::Schema.define(version: 20150301142707) do
   end
 
   create_table "scores", primary_key: "score_id", force: :cascade do |t|
-    t.integer "score",   limit: 4, null: false
-    t.integer "quiz_id", limit: 4, null: false
-    t.integer "user_id", limit: 4
+    t.integer  "score",   limit: 4, null: false
+    t.integer  "quiz_id", limit: 4, null: false
+    t.integer  "user_id", limit: 4
+    t.datetime "date"
   end
 
   add_index "scores", ["quiz_id"], name: "quiz_id", using: :btree

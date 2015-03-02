@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
+<%= link_to 'Create Question', create_quiz_question_path %> |
 <%= link_to 'Show', @quiz %> |
 <%= link_to 'Back', quizzes_path %>

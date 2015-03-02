@@ -1,0 +1,4 @@
+class AddTimeToScores < ActiveRecord::Migration
+  def change
+  end
+end

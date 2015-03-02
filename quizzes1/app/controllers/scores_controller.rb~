@@ -34,7 +34,7 @@ class ScoresController < ApplicationController
   	score = num_correct / num_questions.to_f * 100 # convert to percentage
 
   	# code smell
-  	@score = Score.new(score: score.to_i, quiz_id: params[:quiz_id], user_id: params[:user_id], date: Time.now)
+  	@score = Score.new(score: score.to_i, quiz_id: params[:quiz_id], user_id: params[:user_id])
 
     respond_to do |format|
       if @score.save
