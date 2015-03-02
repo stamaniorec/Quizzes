@@ -48893,3 +48893,247 @@ Processing by QuizzesController#index as HTML
   [1m[35mUser Load (6.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
   Rendered quizzes/index.html.erb within layouts/application (32.0ms)
 Completed 200 OK in 610ms (Views: 592.3ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-03 01:39:26 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (3.3ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (5.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered quizzes/index.html.erb within layouts/application (336.4ms)
+Completed 200 OK in 1257ms (Views: 1119.8ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-03-03 01:39:30 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (59.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (267.4ms)
+Completed 200 OK in 774ms (Views: 764.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-03-03 01:39:40 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"71VC6wik4xy9PuYRTqJq6gIjgajnUoQIvC6sVhBu26XgU5oIxouJAZQJjz0FIrC1MyAzWQLstcWGOIjdOvMFOA==", "user"=>{"email"=>"mitkokage@abv.bg", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (5.2ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mitkokage@abv.bg' LIMIT 1[0m
+  [1m[35mUser Load (5.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = '802e0b43ab3261768550f610cafc74d64bd9ee833f7db53cea352ff2d39e00b4'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `confirmation_token`, `confirmation_sent_at`) VALUES ('mitkokage@abv.bg', '$2a$10$J9REdOIKsfblq7pZlUHLSe4czNmI/YjE9dj5wG97lqUIo6rlCqAj2', '2015-03-02 23:39:41.077045', '2015-03-02 23:39:41.077045', '802e0b43ab3261768550f610cafc74d64bd9ee833f7db53cea352ff2d39e00b4', '2015-03-02 23:39:43.398539')[0m
+  Rendered devise/mailer/confirmation_instructions.html.erb (28.7ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 786.8ms
+
+Sent mail to mitkokage@abv.bg (2154.4ms)
+Date: Tue, 03 Mar 2015 01:39:44 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: mitkokage@abv.bg
+Message-ID: <54f4f4c044034_225467d0cfc2798b@dtrz-desktop.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome mitkokage@abv.bg!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=KfQDPxhJxyGyjbMWSLQf">Confirm my account</a></p>
+
+  [1m[35m (37.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 5666ms (ActiveRecord: 50.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-03 01:39:46 +0200
+Processing by QuizzesController#index as HTML
+  [1m[36mQuiz Load (4.6ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes`[0m
+  [1m[35mUser Load (3.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (7.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  Rendered quizzes/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 438ms (Views: 420.2ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/users/confirmation?confirmation_token=KfQDPxhJxyGyjbMWSLQf" for 127.0.0.1 at 2015-03-03 01:40:51 +0200
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"KfQDPxhJxyGyjbMWSLQf"}
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = '802e0b43ab3261768550f610cafc74d64bd9ee833f7db53cea352ff2d39e00b4'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (3.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2015-03-02 23:40:51.974919', `updated_at` = '2015-03-02 23:40:51.983487' WHERE `users`.`id` = 12[0m
+  [1m[35m (41.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 105ms (ActiveRecord: 48.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-03 01:40:54 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (57.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (118.4ms)
+Completed 200 OK in 579ms (Views: 575.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-03 01:41:04 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iTOtMGTnfo5OwyeutDufyC0Rq7us0tkRh2ZpmKlOy86GNXXTqsgUk2f0ToL/u0WXHBIZSkls6Ny9cE0Tg9MVUw==", "user"=>{"email"=>"mitkokage@abv.bg", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'mitkokage@abv.bg'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.9ms)[0m  BEGIN
+  [1m[36mSQL (6.0ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-03-02 23:41:04.784971', `current_sign_in_at` = '2015-03-02 23:41:04.784971', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2015-03-02 23:41:04.795379' WHERE `users`.`id` = 12[0m
+  [1m[35m (38.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 282ms (ActiveRecord: 49.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-03 01:41:05 +0200
+Processing by QuizzesController#index as HTML
+  [1m[36mQuiz Load (4.9ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes`[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 12  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (8.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered quizzes/index.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 523ms (Views: 499.8ms | ActiveRecord: 14.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-03-03 01:41:09 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Gk3v+o6Pjoctgr+Gj2nM/5h+rgQP4/ufZJXug6s9ojDs+jyRRIqk3n2f2r0y1RcwDXwHVQF23JOITsuVvMrc8w=="}
+  [1m[35mUser Load (2.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 12  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 39ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-03 01:41:09 +0200
+Processing by QuizzesController#index as HTML
+  [1m[36mQuiz Load (3.6ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes`[0m
+  [1m[35mUser Load (3.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (6.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  Rendered quizzes/index.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 552ms (Views: 533.7ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-03 01:42:34 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (4.4ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (8.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered quizzes/index.html.erb within layouts/application (321.1ms)
+Completed 200 OK in 1229ms (Views: 1085.1ms | ActiveRecord: 23.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-03-03 01:42:43 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (51.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (231.6ms)
+Completed 200 OK in 801ms (Views: 790.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-03-03 01:42:53 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oZplysLEB/fATa4eytuIXzQojQH/FcHEj0YrjlV3B45Q5s15+cp1ida6SWeMeHAqvGH+Ngo9TmnfiWv2FS25aQ==", "user"=>{"email"=>"dimitar.trz@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (4.8ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dimitar.trz@gmail.com' LIMIT 1[0m
+  [1m[35mUser Load (5.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = 'abed09d827077307922382ae3b289ba1a6f7f2e8aa582ec28e1a60cf76fb3b4c'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `confirmation_token`, `confirmation_sent_at`) VALUES ('dimitar.trz@gmail.com', '$2a$10$mKOvylRIHucQTxP1FA8RLuIdTeVmobbXgGZsylYNwV1jM7O0C0yRm', '2015-03-02 23:42:53.428631', '2015-03-02 23:42:53.428631', 'abed09d827077307922382ae3b289ba1a6f7f2e8aa582ec28e1a60cf76fb3b4c', '2015-03-02 23:42:55.816883')[0m
+  Rendered devise/mailer/confirmation_instructions.html.erb (40.7ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 797.3ms
+
+Sent mail to dimitar.trz@gmail.com (2034.6ms)
+Date: Tue, 03 Mar 2015 01:42:56 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: dimitar.trz@gmail.com
+Message-ID: <54f4f580b00ac_227b5cb0bc4377da@dtrz-desktop.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome dimitar.trz@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=x_De4cnqFJFrYED5xR22">Confirm my account</a></p>
+
+  [1m[35m (222.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 5814ms (ActiveRecord: 234.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-03 01:42:59 +0200
+Processing by QuizzesController#index as HTML
+  [1m[36mQuiz Load (4.5ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes`[0m
+  [1m[35mUser Load (3.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (4.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  Rendered quizzes/index.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 457ms (Views: 439.4ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/users/confirmation?confirmation_token=x_De4cnqFJFrYED5xR22" for 127.0.0.1 at 2015-03-03 01:43:07 +0200
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"x_De4cnqFJFrYED5xR22"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = 'abed09d827077307922382ae3b289ba1a6f7f2e8aa582ec28e1a60cf76fb3b4c'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (8.3ms)[0m  [1mUPDATE `users` SET `confirmation_token` = NULL, `confirmed_at` = '2015-03-02 23:43:07.816971', `updated_at` = '2015-03-02 23:43:07.819274' WHERE `users`.`id` = 13[0m
+  [1m[35m (41.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 103ms (ActiveRecord: 52.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-03 01:43:08 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (58.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 555ms (Views: 551.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-03 01:43:15 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pjXPujapg3mTskRUDhNeJIjQiR5uuqGE4RQX1pFvL+xXSWcJDafxB4VFoy1IsKZRAJn6KZuSLimx21eu0TWRCw==", "user"=>{"email"=>"dimitar.trz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (8.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'dimitar.trz@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (6.0ms)[0m  BEGIN
+  [1m[36mSQL (9.5ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-03-02 23:43:15.526368', `current_sign_in_at` = '2015-03-02 23:43:15.526368', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2015-03-02 23:43:15.537943' WHERE `users`.`id` = 13[0m
+  [1m[35m (42.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 284ms (ActiveRecord: 66.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-03 01:43:16 +0200
+Processing by QuizzesController#index as HTML
+  [1m[36mQuiz Load (5.8ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes`[0m
+  [1m[35mUser Load (1.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (5.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 13  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered quizzes/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 512ms (Views: 492.6ms | ActiveRecord: 17.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-03-03 01:43:20 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3C3XVzz+nE6UrpjCvZbFRiqGrSLLjAGDhVbt6ZMOKt8dYr7vpkBVxAlYMR//ivKKOgrFSCBigE8i5vRsClJTzA=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 13  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 45ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-03 01:43:21 +0200
+Processing by QuizzesController#index as HTML
+  [1m[36mQuiz Load (4.6ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes`[0m
+  [1m[35mUser Load (2.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  Rendered quizzes/index.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 586ms (Views: 576.0ms | ActiveRecord: 7.5ms)
