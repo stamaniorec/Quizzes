@@ -49137,3 +49137,140 @@ Processing by QuizzesController#index as HTML
   [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
   Rendered quizzes/index.html.erb within layouts/application (37.3ms)
 Completed 200 OK in 586ms (Views: 576.0ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-03 21:45:26 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (10.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (2.5ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered quizzes/index.html.erb within layouts/application (298.8ms)
+Completed 200 OK in 1323ms (Views: 1183.8ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-03 21:45:30 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (0.8ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.8ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mAnswer Load (0.8ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 15[0m
+  [1m[35mAnswer Load (0.8ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 18
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 477ms (Views: 274.1ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/scores" for 127.0.0.1 at 2015-03-03 21:45:42 +0200
+Processing by ScoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F3SJo4D3JKSFbUlbwsGiitOEBtOimBwHERJFtFF4aVOtQCgSQlhLu/WgQPXKKrbUfTDzY4Fpww8EzoB8dzSmfw==", "answer"=>{"0"=>"0", "1"=>"2", "2"=>"0"}, "correct"=>{"0"=>"0", "1"=>"2", "2"=>"1"}, "quiz_id"=>"1", "user_id"=>"-1", "commit"=>"Submit Quiz"}
+Completed 500 Internal Server Error in 25ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'date' for Score.):
+  app/controllers/scores_controller.rb:37:in `create'
+
+
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (31.0ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (20.6ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (4.5ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.4ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (127.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-03 21:46:12 +0200
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (2.0ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (4.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered quizzes/index.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 484ms (Views: 474.4ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/quizzes/1" for 127.0.0.1 at 2015-03-03 21:46:15 +0200
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuiz Load (6.9ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 1[0m
+  [1m[35mAnswer Load (0.6ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 13
+  [1m[36mAnswer Load (4.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 15[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 18
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered quizzes/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 294ms (Views: 254.3ms | ActiveRecord: 15.7ms)
+
+
+Started POST "/scores" for 127.0.0.1 at 2015-03-03 21:46:20 +0200
+Processing by ScoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PZnCeJGbgweMMaUoViPkyVQOaAdFWBVZ6e7Mqnwm9SGHrWPJUzTsGPz8rIZeyPCX+rqdt2apylH8MgliWmo6DQ==", "answer"=>{"0"=>"0", "1"=>"2", "2"=>"0"}, "correct"=>{"0"=>"0", "1"=>"2", "2"=>"1"}, "quiz_id"=>"1", "user_id"=>"-1", "commit"=>"Submit Quiz"}
+Completed 500 Internal Server Error in 16ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'date' for Score.):
+  app/controllers/scores_controller.rb:37:in `create'
+
+
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (23.0ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (15.5ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (6.5ms)
+  Rendered /home/dtrz/.rvm/gems/ruby-2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (127.8ms)
+
+
+Started POST "/scores" for 127.0.0.1 at 2015-03-03 21:47:06 +0200
+Processing by ScoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PZnCeJGbgweMMaUoViPkyVQOaAdFWBVZ6e7Mqnwm9SGHrWPJUzTsGPz8rIZeyPCX+rqdt2apylH8MgliWmo6DQ==", "answer"=>{"0"=>"0", "1"=>"2", "2"=>"0"}, "correct"=>{"0"=>"0", "1"=>"2", "2"=>"1"}, "quiz_id"=>"1", "user_id"=>"-1", "commit"=>"Submit Quiz"}
+  [1m[35m (2.8ms)[0m  BEGIN
+  [1m[36mSQL (3.6ms)[0m  [1mINSERT INTO `scores` (`score`, `quiz_id`, `user_id`, `created_at`, `updated_at`) VALUES (66, 1, -1, '2015-03-03 19:47:07.387681', '2015-03-03 19:47:07.387681')[0m
+  [1m[35m (32.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/scores/10
+Completed 302 Found in 113ms (ActiveRecord: 44.4ms)
+
+
+Started GET "/scores/10" for 127.0.0.1 at 2015-03-03 21:47:07 +0200
+Processing by ScoresController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mScore Load (6.8ms)[0m  [1mSELECT  `scores`.* FROM `scores` WHERE `scores`.`score_id` = 10 LIMIT 1[0m
+  [1m[35mQuiz Load (1.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  Rendered scores/show.html.erb within layouts/application (43.2ms)
+Completed 200 OK in 407ms (Views: 390.3ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
