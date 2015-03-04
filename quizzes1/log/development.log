@@ -49274,3 +49274,609 @@ Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.
 
 
 Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-03 21:47:08 +0200
+
+
+Started GET "/quizzes" for 127.0.0.1 at 2015-03-04 18:02:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered quizzes/index.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 158ms (Views: 141.6ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-04 18:02:46 +0200
+
+
+Started DELETE "/quizzes/7" for 127.0.0.1 at 2015-03-04 18:02:47 +0200
+Processing by QuizzesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Pz7ZLyzWkO/gl+/lB5DG4hn7z6lovmdgzT9ikdx9Zguys6hMtxRzSKYoAExl/e3k761DUXTlJY11yrypr1wyZw==", "id"=>"7"}
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 7[0m
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 15
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `answers` WHERE `answers`.`answer_id` = 31[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `answers` WHERE `answers`.`answer_id` = 32
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `answers` WHERE `answers`.`answer_id` = 33[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `questions` WHERE `questions`.`question_id` = 15
+  [1m[36mSQL (130.6ms)[0m  [1mDELETE FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7[0m
+Mysql2::Error: Cannot delete or update a parent row: a foreign key constraint fails (`quiz_website`.`scores`, CONSTRAINT `scores_ibfk_1` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`quiz_id`)): DELETE FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7
+  [1m[35m (53.0ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 229ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Cannot delete or update a parent row: a foreign key constraint fails (`quiz_website`.`scores`, CONSTRAINT `scores_ibfk_1` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`quiz_id`)): DELETE FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7):
+  app/controllers/quizzes_controller.rb:64:in `destroy'
+
+
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.9ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (21.9ms)
+
+
+Started GET "/quizzes/7" for 127.0.0.1 at 2015-03-04 18:04:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7 LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 7[0m
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 15
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered quizzes/show.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 179ms (Views: 122.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-04 18:04:56 +0200
+
+
+Started GET "/quizzes" for 127.0.0.1 at 2015-03-04 18:04:57 +0200
+Processing by QuizzesController#index as HTML
+  [1m[36mQuiz Load (0.4ms)[0m  [1mSELECT `quizzes`.* FROM `quizzes`[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered quizzes/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 81ms (Views: 77.9ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/quizzes/7" for 127.0.0.1 at 2015-03-04 18:05:00 +0200
+Processing by QuizzesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7jEPsRgrR/MXVGvJ4JSdB1QYtQG8Am40shx9MNrLebFjvH7Sg+mkVFHrhGCC+bYBok45+aBZLNkK6aMIqeot3Q==", "id"=>"7"}
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 7
+  [1m[36mAnswer Load (0.4ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 15[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `answers` WHERE `answers`.`answer_id` = 31
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `answers` WHERE `answers`.`answer_id` = 32[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `answers` WHERE `answers`.`answer_id` = 33
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `questions` WHERE `questions`.`question_id` = 15[0m
+  [1m[35mSQL (145.2ms)[0m  DELETE FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7
+Mysql2::Error: Cannot delete or update a parent row: a foreign key constraint fails (`quiz_website`.`scores`, CONSTRAINT `scores_ibfk_1` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`quiz_id`)): DELETE FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7
+  [1m[36m (52.9ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 218ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Cannot delete or update a parent row: a foreign key constraint fails (`quiz_website`.`scores`, CONSTRAINT `scores_ibfk_1` FOREIGN KEY (`quiz_id`) REFERENCES `quizzes` (`quiz_id`)): DELETE FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7):
+  app/controllers/quizzes_controller.rb:64:in `destroy'
+
+
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.3ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/stamaniorec/.rvm/gems/ruby-2.1.1/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (20.1ms)
+
+
+Started DELETE "/quizzes/7" for 127.0.0.1 at 2015-03-04 18:07:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuizzesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7jEPsRgrR/MXVGvJ4JSdB1QYtQG8Am40shx9MNrLebFjvH7Sg+mkVFHrhGCC+bYBok45+aBZLNkK6aMIqeot3Q==", "id"=>"7"}
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT `questions`.* FROM `questions` WHERE `questions`.`quiz_id` = 7
+  [1m[36mAnswer Load (0.5ms)[0m  [1mSELECT `answers`.* FROM `answers` WHERE `answers`.`question_id` = 15[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `answers` WHERE `answers`.`answer_id` = 31
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `answers` WHERE `answers`.`answer_id` = 32[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `answers` WHERE `answers`.`answer_id` = 33
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `questions` WHERE `questions`.`question_id` = 15[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT `scores`.* FROM `scores` WHERE `scores`.`quiz_id` = 7
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM `scores` WHERE `scores`.`score_id` = 28[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `quizzes` WHERE `quizzes`.`quiz_id` = 7
+  [1m[36m (76.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/quizzes
+Completed 302 Found in 286ms (ActiveRecord: 194.7ms)
+
+
+Started GET "/quizzes" for 127.0.0.1 at 2015-03-04 18:07:39 +0200
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered quizzes/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 115ms (Views: 112.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-04 18:07:40 +0200
+
+
+Started GET "/quizzes" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered quizzes/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 77ms (Views: 75.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-04 18:08:39 +0200
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-04 18:08:40 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1[0m
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1[0m  [["quiz_id", 2]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m  [["quiz_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  Rendered users/show.html.erb within layouts/application (8.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 143ms (Views: 136.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-04 18:09:07 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1[0m
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1[0m  [["quiz_id", 2]]
+  [1m[35mQuiz Load (0.2ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m  [["quiz_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  Rendered users/show.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 88ms (Views: 83.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:07 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:07 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:07 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:07 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:07 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:07 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:08 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:08 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:08 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:08 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:08 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:08 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:08 +0200
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1[0m
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1[0m  [["quiz_id", 2]]
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m  [["quiz_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  Rendered users/show.html.erb within layouts/application (8.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 89ms (Views: 83.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:17 +0200
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1[0m
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1[0m  [["quiz_id", 2]]
+  [1m[35mQuiz Load (0.3ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m  [["quiz_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 90ms (Views: 83.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:31 +0200
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1[0m
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1[0m  [["quiz_id", 2]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m  [["quiz_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  Rendered users/show.html.erb within layouts/application (9.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 85ms (Views: 79.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/scores-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/quizzes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/application-1933cf9609617cdf71593821b3140bbb.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/scaffolds-bdd59aa255942a5bfc02d856bc0365d4.css?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/quizzes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/scores-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/cocoon-50668a911ac69114e0706ea5dc068e8c.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/assets/application-97184eed0975f2b8f48c5d0b7374422d.js?body=1" for 127.0.0.1 at 2015-03-04 18:09:38 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-04 18:09:42 +0200
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (0.6ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered quizzes/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 91ms (Views: 87.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-03-04 18:09:45 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT `quizzes`.* FROM `quizzes` WHERE `quizzes`.`user_id` = 1
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT `scores`.* FROM `scores` WHERE `scores`.`user_id` = 1[0m
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 2 LIMIT 1[0m  [["quiz_id", 2]]
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1[0m  [["quiz_id", 6]]
+  [1m[35mQuiz Load (0.5ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 1 LIMIT 1[0m  [["quiz_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `quizzes`.* FROM `quizzes` WHERE `quizzes`.`quiz_id` = 6 LIMIT 1  [["quiz_id", 6]]
+  Rendered users/show.html.erb within layouts/application (14.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 91ms (Views: 84.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-04 18:09:48 +0200
+Processing by QuizzesController#index as HTML
+  [1m[35mQuiz Load (0.4ms)[0m  SELECT `quizzes`.* FROM `quizzes`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered quizzes/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 89ms (Views: 86.9ms | ActiveRecord: 1.6ms)
