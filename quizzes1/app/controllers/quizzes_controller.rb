@@ -3,7 +3,7 @@ require 'quiz_master'
 class QuizzesController < ApplicationController
   before_action :set_quiz, only: [:show, :edit, :update, :destroy, :check_authentication]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :check_authentication, only: [:edit, :destroy, :create_question]
+  before_action :check_authentication, only: [:edit, :destroy]
 
   # GET /quizzes
   # GET /quizzes.json

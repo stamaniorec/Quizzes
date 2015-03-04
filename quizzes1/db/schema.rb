@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150301142707) do
+ActiveRecord::Schema.define(version: 20150302211650) do
 
   create_table "answers", primary_key: "answer_id", force: :cascade do |t|
     t.integer "question_id", limit: 4
@@ -36,9 +36,11 @@ ActiveRecord::Schema.define(version: 20150301142707) do
   end
 
   create_table "scores", primary_key: "score_id", force: :cascade do |t|
-    t.integer "score",   limit: 4, null: false
-    t.integer "quiz_id", limit: 4, null: false
-    t.integer "user_id", limit: 4
+    t.integer  "score",      limit: 4, null: false
+    t.integer  "quiz_id",    limit: 4, null: false
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "scores", ["quiz_id"], name: "quiz_id", using: :btree
@@ -56,8 +58,12 @@ ActiveRecord::Schema.define(version: 20150301142707) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "confirmation_token",     limit: 255
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 

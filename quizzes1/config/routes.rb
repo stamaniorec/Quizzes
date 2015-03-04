@@ -14,12 +14,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   
-  get 'quizzes/:id/create_question', to: 'quizzes#create_question', as: 'create_quiz_question'
-  get 'quizzes/:id/edit_question', to: 'quizzes#edit_question', as: 'edit_question'
-  get 'quizzes/:id/questions', to: 'quizzes#index', as: 'question'
-  #get 'quizzes/:id/error', to: 'quizzes#error', as: 'error'
+  #Questions routes
   patch "/quizzes/:quiz_id/questions/:id" => "questions#update", :as => "update_question"
   delete "/quizzes/:quiz_id/questions/:id" => "questions#delete", :as => "destroy_question"
+  
+  #Users routes
+  get 'users' => 'users#index', as: 'users_index'
+  get 'users/:id'=> 'users#show', as: 'user_show'
+  
   root 'quizzes#index'
 
   # Example of regular route:

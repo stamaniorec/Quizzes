@@ -1,0 +1,23 @@
+<p>hello, <%= @user.email.split('@').first %></p>
+<h1>Listing Quizzes<h1>
+<p><% @quizzes.each do |quiz| %>
+	<%= link_to(quiz.name, quiz) %>
+	<br>
+<% end %></p>
+<h1>Listing Scores<h1>
+<table>
+	<tr>
+		<td>Name</td>
+		<td>Score</td>
+		<td>Date</td>
+	</tr>
+	<% @scores.each do |score| %>
+		<tr>
+			<td><%= score.quiz.name %></td> 
+			<td><%= score.score %></td> 
+			<td><%= score.created_at %></td>
+		</tr>
+	<% end %>
+<table>
+
+<p><%= link_to 'Back', root_path %></p>
