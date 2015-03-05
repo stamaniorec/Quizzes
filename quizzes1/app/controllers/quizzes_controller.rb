@@ -5,31 +5,23 @@ class QuizzesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_authentication, only: [:edit, :destroy]
 
-  # GET /quizzes
-  # GET /quizzes.json
   def index
     @quizzes = Quiz.all
   end
 
-  # GET /quizzes/1
-  # GET /quizzes/1.json
   def show
     @quiz_variant = build_quiz_variant
     @score = Score.new
   end
 
-  # GET /quizzes/new
   def new
     @quiz = current_user.quizzes.build
     @quiz.questions.build
   end
 
-  # GET /quizzes/1/edit
   def edit
   end
 
-  # POST /quizzes
-  # POST /quizzes.json
   def create
     @quiz = current_user.quizzes.build(quiz_params)
 
@@ -44,8 +36,6 @@ class QuizzesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /quizzes/1
-  # PATCH/PUT /quizzes/1.json
   def update
     respond_to do |format|
       if @quiz.update(quiz_params)
@@ -58,16 +48,18 @@ class QuizzesController < ApplicationController
     end
   end
 
-  # DELETE /quizzes/1
-  # DELETE /quizzes/1.json
   def destroy
     @quiz.destroy
+
+    remove_badges_if_necessary
+    
     respond_to do |format|
       format.html { redirect_to quizzes_url, notice: 'Quiz was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
   
+  # Makes sure you cannot modify quizzes that do not belong to you through url
   def check_authentication
     if @quiz.user != current_user
       redirect_to quizzes_path
@@ -76,12 +68,10 @@ class QuizzesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_quiz
       @quiz = Quiz.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def quiz_params
       params.require(:quiz).permit(
         :name, :user_id, :shuffled,
@@ -90,6 +80,13 @@ class QuizzesController < ApplicationController
         ])
     end
 
+    # Merit
+    def remove_badges_if_necessary
+      if current_user.quizzes.count < 3
+        current_user.rm_badge(1)
+      end
+    end
+    
     # Builds a quiz variant out of a given quiz from the database
     # I.e. You get a random ordering of the questions and the answers
     # Returns nil if the quiz is empty

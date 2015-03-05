@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302211650) do
+ActiveRecord::Schema.define(version: 20150305065409) do
 
-  create_table "answers", primary_key: "answer_id", force: :cascade do |t|
+  create_table "answers", force: :cascade do |t|
     t.integer "question_id", limit: 4
     t.string  "value",       limit: 255
     t.boolean "is_correct",  limit: 1
@@ -22,20 +22,69 @@ ActiveRecord::Schema.define(version: 20150302211650) do
 
   add_index "answers", ["question_id"], name: "question_id", using: :btree
 
-  create_table "questions", primary_key: "question_id", force: :cascade do |t|
+  create_table "badges_sashes", force: :cascade do |t|
+    t.integer  "badge_id",      limit: 4
+    t.integer  "sash_id",       limit: 4
+    t.boolean  "notified_user", limit: 1, default: false
+    t.datetime "created_at"
+  end
+
+  add_index "badges_sashes", ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id", using: :btree
+  add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id", using: :btree
+  add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id", using: :btree
+
+  create_table "merit_actions", force: :cascade do |t|
+    t.integer  "user_id",       limit: 4
+    t.string   "action_method", limit: 255
+    t.integer  "action_value",  limit: 4
+    t.boolean  "had_errors",    limit: 1,     default: false
+    t.string   "target_model",  limit: 255
+    t.integer  "target_id",     limit: 4
+    t.text     "target_data",   limit: 65535
+    t.boolean  "processed",     limit: 1,     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "merit_activity_logs", force: :cascade do |t|
+    t.integer  "action_id",           limit: 4
+    t.string   "related_change_type", limit: 255
+    t.integer  "related_change_id",   limit: 4
+    t.string   "description",         limit: 255
+    t.datetime "created_at"
+  end
+
+  create_table "merit_score_points", force: :cascade do |t|
+    t.integer  "score_id",   limit: 4
+    t.integer  "num_points", limit: 4,   default: 0
+    t.string   "log",        limit: 255
+    t.datetime "created_at"
+  end
+
+  create_table "merit_scores", force: :cascade do |t|
+    t.integer "sash_id",  limit: 4
+    t.string  "category", limit: 255, default: "default"
+  end
+
+  create_table "questions", force: :cascade do |t|
     t.string  "question", limit: 50, null: false
     t.integer "quiz_id",  limit: 4,  null: false
   end
 
   add_index "questions", ["quiz_id"], name: "quiz_id", using: :btree
 
-  create_table "quizzes", primary_key: "quiz_id", force: :cascade do |t|
+  create_table "quizzes", force: :cascade do |t|
     t.string  "name",     limit: 50, null: false
     t.integer "user_id",  limit: 4
     t.boolean "shuffled", limit: 1
   end
 
-  create_table "scores", primary_key: "score_id", force: :cascade do |t|
+  create_table "sashes", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scores", force: :cascade do |t|
     t.integer  "score",      limit: 4, null: false
     t.integer  "quiz_id",    limit: 4, null: false
     t.integer  "user_id",    limit: 4
@@ -61,12 +110,12 @@ ActiveRecord::Schema.define(version: 20150302211650) do
     t.string   "confirmation_token",     limit: 255
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "sash_id",                limit: 4
+    t.integer  "level",                  limit: 4,   default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "questions", "quizzes", primary_key: "quiz_id", name: "questions_ibfk_1"
-  add_foreign_key "scores", "quizzes", primary_key: "quiz_id", name: "scores_ibfk_1"
 end

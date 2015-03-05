@@ -48,3 +48,4 @@ end
 
 gem 'quiz_master', '~> 0.0.3'
 gem 'devise', '~> 3.4.1'
+gem 'merit', '~> 2.3.1'

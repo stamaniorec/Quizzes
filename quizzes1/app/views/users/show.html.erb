@@ -20,4 +20,11 @@
 	<% end %>
 <table>
 
+<h1>Listing badges</h1>
+<ul>
+	<% @user.badges.each do |badge| %>
+		<li><%= badge.name %></li>
+	<% end %>
+</ul>
+
 <p><%= link_to 'Back', root_path %></p>
