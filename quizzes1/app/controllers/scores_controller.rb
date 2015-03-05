@@ -11,14 +11,21 @@ class ScoresController < ApplicationController
   def create
     num_questions = params[:answer].length
     num_correct = 0
+
+    points_to_award = 0
+
     0.upto(num_questions - 1) do |question_index|
       answered_correctly = params[:answer][question_index.to_s] == params[:correct][question_index.to_s]
-      num_correct += 1 if answered_correctly
+      if answered_correctly
+        num_correct += 1
+        points_to_award += 1
+      end
     end
 
     score = num_correct / num_questions.to_f * 100 # convert to percentage
 
     @score = Score.new(score: score.to_i, quiz_id: params[:quiz_id], user_id: params[:user_id])
+    current_user.add_points(points_to_award * 1, category: 'Play')
     
     respond_to do |format|
       if @score.save

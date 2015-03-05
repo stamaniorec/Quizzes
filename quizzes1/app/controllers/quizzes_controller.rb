@@ -25,6 +25,10 @@ class QuizzesController < ApplicationController
   def create
     @quiz = current_user.quizzes.build(quiz_params)
 
+    points_to_award = 0
+    @quiz.questions.each { points_to_award += 1 }
+    current_user.add_points(points_to_award * 3, category: 'Create')
+
     respond_to do |format|
       if @quiz.save
         format.html { redirect_to @quiz, notice: 'Quiz was successfully created.' }

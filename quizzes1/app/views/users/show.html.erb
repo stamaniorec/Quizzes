@@ -27,4 +27,13 @@
 	<% end %>
 </ul>
 
+<h1>Points for playing<h1>
+<%= current_user.points(category: 'Play') %>
+
+<h1>Points for creating<h1>
+<%= current_user.points(category: 'Create') %>
+
+<h1>All points<h1>
+<%= current_user.points %>
+
 <p><%= link_to 'Back', root_path %></p>
