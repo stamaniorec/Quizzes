@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   #Users routes
   get 'users' => 'users#index', as: 'users_index'
   get 'users/:id'=> 'users#show', as: 'user_show'
+
+  get 'leaderboard/play' => 'leaderboard#show_play_leaderboard', as: 'play_leaderboard'
+  get 'leaderboard/create' => 'leaderboard#show_create_leaderboard', as: 'create_leaderboard'
+  get 'leaderboard/general' => 'leaderboard#show_general_leaderboard', as: 'show_general_leaderboard'
+  match 'leaderboard', to: 'leaderboard#show_general_leaderboard', via: :get
   
   root 'quizzes#index'
 

@@ -1,0 +1,8 @@
+<h1><%= heading %></h1>
+<ol>
+	<% top_results.each do |hash| %>
+		<% user_email = User.find(hash[:user_id].to_i).email %>
+		<% user_score = hash[:sum_points] %>
+		<li><%= "#{user_email} -> #{user_score}" %></li>
+	<% end %>
+</ol>
