@@ -4,4 +4,6 @@ class Quiz < ActiveRecord::Base
 
   has_many :scores, dependent: :destroy
   belongs_to :user
+
+  has_many :comments, dependent: :destroy
 end

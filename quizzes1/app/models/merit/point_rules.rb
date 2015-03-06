@@ -25,6 +25,8 @@ module Merit
       # ]
       #
       # score -10, :on => 'comments#destroy'
+
+      score 1, on: 'comments#create'
     end
   end
 end

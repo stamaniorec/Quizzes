@@ -28,3 +28,6 @@
 	<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
 <% end %>
 <%= link_to 'Back', quizzes_path %>
+
+<%= render 'comments/comments', comments: @quiz.comments, quiz: @quiz %>
+<%= render 'comments/form' %>

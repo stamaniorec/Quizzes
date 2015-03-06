@@ -1,0 +1,9 @@
+<h1>Edit comment</h1>
+
+<%= form_for [@quiz, @comment] do |f| %>
+  <div class="field">
+    <%= f.text_area :body %>
+  </div>
+  <br>
+  <%= f.submit "Update Comment" %>
+<% end %>

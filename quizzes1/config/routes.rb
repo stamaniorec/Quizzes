@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :scores
 
   resources :quizzes do
-  	resources :questions
+    resources :questions
+    resources :comments
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
