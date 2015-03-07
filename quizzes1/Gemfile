@@ -46,6 +46,11 @@ group :development, :test do
   gem 'spring'
 end
 
+#quiz_managment
 gem 'quiz_master', '~> 0.0.3'
+#user_managment
 gem 'devise', '~> 3.4.1'
+#achievments_managment
 gem 'merit', '~> 2.3.1'
+#search
+gem 'scoped_search'

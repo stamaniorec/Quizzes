@@ -6,4 +6,6 @@ class Quiz < ActiveRecord::Base
   belongs_to :user
 
   has_many :comments, dependent: :destroy
+  
+  scoped_search :on => :name
 end

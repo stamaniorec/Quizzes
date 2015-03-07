@@ -1,0 +1,34 @@
+<% search_querry = '' %>
+<% if (defined? params[:quiz_search][0]) && params[:quiz_search][0].length>0 %>
+	<h3>Quizzes</h3>
+	<% search_querry = params[:quiz_search][0] %>
+	<% search_results = Quiz.search_for(search_querry) %>
+	<% search_results.each do |result| %>
+		<p><%= link_to(result.name, result) %></p>
+	<% end %>
+<% end %>
+
+<% if (defined? params[:user_search][0]) && params[:user_search][0].length>0 %>
+	<h3>Quizzes from Users</h3>
+	<% search_querry = params[:user_search][0] %>
+	<% search_results = User.search_for(search_querry, :order => 'quizzes.size asc') %>
+	<% search_results.each do |result| %>
+		<%# if result.quizzes.size > 0 %>
+		<p>The user "<%= result.email %>" has quizzes: 
+		<% result.quizzes.each do |quiz| %>
+			<%= link_to(quiz.name, quiz) %>
+		<% end %>
+		</p>
+	<% end %>
+<% end %>
+
+<% if (defined? params[:question_search][0]) && params[:question_search][0].length>0 %>
+	<h3>Quiestions from Quizzes</h3>
+	<% search_querry = params[:question_search][0] %>
+	<% search_results = Question.search_for(search_querry) %>
+	<% search_results.each do |result| %>
+		<p>The question "<%= result.question %>" is from the quiz "<%= link_to(result.quiz.name, result.quiz) %>"</p>
+	<% end %>
+<% end %>
+
+<% params[:quiz_search] = nil %>
