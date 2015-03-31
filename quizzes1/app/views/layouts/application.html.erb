@@ -19,9 +19,9 @@
 	<p><%= link_to 'Sign in', new_user_session_path %></p>
 <% end %>
 
-<%= form_tag(search_results_path, :method => 'get') do %>
-	<%= text_field :quiz_search, params[:quiz_search], placeholder: "Search Quizzes" %>
-	<%= submit_tag "Search", :name => nil %>
+<%= form_tag search_results_path, method: 'get' do %>
+	<%= text_field_tag :quiz_search, params[:quiz_search], placeholder: 'Search Quizzes' %>
+	<%= submit_tag 'Search', name: nil %>
 <% end %>
 
 <br>

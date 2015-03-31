@@ -1,0 +1,6 @@
+<%= form_tag search_results_path, method: 'get' do %>
+	<%= text_field_tag :quiz_search, params[:quiz_search], placeholder: "Search Quizzes" %>
+	<%= text_field_tag :user_search, params[:user_search], placeholder: "Search Quizzes by User" %>
+	<%= text_field_tag :question_search, params[:question_search], placeholder: "Search Quizzes by Question" %>
+	<%= submit_tag "Search", :name => nil %>
+<% end %>
