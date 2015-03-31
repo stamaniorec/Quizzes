@@ -54,3 +54,7 @@ gem 'devise', '~> 3.4.1'
 gem 'merit', '~> 2.3.1'
 #search
 gem 'scoped_search'
+#share button
+gem 'social-share-button'
+#paganite
+gem 'will_paginate', '~> 3.0.6'

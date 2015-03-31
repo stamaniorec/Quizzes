@@ -6,7 +6,7 @@ class QuizzesController < ApplicationController
   before_action :check_authentication, only: [:edit, :destroy]
 
   def index
-    @quizzes = Quiz.all
+    @quizzes = Quiz.paginate(:page => params[:page], :per_page => 4)
   end
 
   def show
