@@ -26,6 +26,11 @@
   </tbody>
 </table>
 
-<br>
+<div class = "digg_pagination">
+	<div class="page_info">
+      <%= page_entries_info @quizzes %>
+    </div>
+<%= will_paginate @quizzes, :container => false %>
+</div>
 
 <%= link_to 'New Quiz', new_quiz_path %>
