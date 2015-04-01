@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150306181357) do
 
-  create_table "answers", force: :cascade do |t|
+  create_table "answers", primary_key: "answer_id", force: :cascade do |t|
     t.integer "question_id", limit: 4
     t.string  "value",       limit: 255
     t.boolean "is_correct",  limit: 1
@@ -74,14 +74,14 @@ ActiveRecord::Schema.define(version: 20150306181357) do
     t.string  "category", limit: 255, default: "default"
   end
 
-  create_table "questions", force: :cascade do |t|
+  create_table "questions", primary_key: "question_id", force: :cascade do |t|
     t.string  "question", limit: 50, null: false
     t.integer "quiz_id",  limit: 4,  null: false
   end
 
   add_index "questions", ["quiz_id"], name: "quiz_id", using: :btree
 
-  create_table "quizzes", force: :cascade do |t|
+  create_table "quizzes", primary_key: "quiz_id", force: :cascade do |t|
     t.string  "name",     limit: 50, null: false
     t.integer "user_id",  limit: 4
     t.boolean "shuffled", limit: 1
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20150306181357) do
     t.datetime "updated_at"
   end
 
-  create_table "scores", force: :cascade do |t|
+  create_table "scores", primary_key: "score_id", force: :cascade do |t|
     t.integer  "score",      limit: 4, null: false
     t.integer  "quiz_id",    limit: 4, null: false
     t.integer  "user_id",    limit: 4
@@ -126,4 +126,6 @@ ActiveRecord::Schema.define(version: 20150306181357) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "questions", "quizzes", primary_key: "quiz_id", name: "questions_ibfk_1"
+  add_foreign_key "scores", "quizzes", primary_key: "quiz_id", name: "scores_ibfk_1"
 end

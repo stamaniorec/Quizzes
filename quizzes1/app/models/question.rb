@@ -6,7 +6,9 @@ class Question < ActiveRecord::Base
 
   validates :question, presence: true
   validate :not_more_than_one_correct_answer, :at_least_one_correct_answer
-
+  
+  scoped_search :on => :question
+  
   private
 
   def reject_questions(attrs)

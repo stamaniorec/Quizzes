@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   has_many :quizzes
   has_many :scores
   has_many :comments
+  
+  scoped_search :on => :email
 end
