@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_votable (0.10.0)
     ambry (0.3.1)
     arel (6.0.0)
     bcrypt (3.1.10)
@@ -175,6 +176,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_votable (~> 0.10.0)
   byebug
   cocoon (~> 1.2.6)
   coffee-rails (~> 4.1.0)

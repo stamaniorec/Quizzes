@@ -1,7 +1,7 @@
 require 'quiz_master'
 
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: [:show, :edit, :update, :destroy, :check_authentication]
+  before_action :set_quiz, only: [:show, :edit, :update, :destroy, :check_authentication, :upvote, :downvote]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_authentication, only: [:edit, :destroy]
 
@@ -62,7 +62,19 @@ class QuizzesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
+  def upvote
+    @quiz.upvote_by current_user
+    current_user.add_points 1 unless current_user.voted_for? @quiz
+    redirect_to :back
+  end
+
+  def downvote
+    @quiz.downvote_by current_user
+    current_user.add_points 1 unless current_user.voted_for? @quiz
+    redirect_to :back
+  end
+
   # Makes sure you cannot modify quizzes that do not belong to you through url
   def check_authentication
     if @quiz.user != current_user

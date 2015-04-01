@@ -10,4 +10,6 @@ class Quiz < ActiveRecord::Base
   scoped_search on: :name
   scoped_search in: :user, on: :email
   scoped_search in: :questions, on: :question
+
+  acts_as_votable
 end

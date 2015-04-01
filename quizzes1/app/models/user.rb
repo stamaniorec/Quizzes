@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   has_many :comments
   
   scoped_search :on => :email
+
+  acts_as_voter
 end

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :scores
 
   resources :quizzes do
+    member do
+      put 'like', to: 'quizzes#upvote'
+      put 'dislike', to: 'quizzes#downvote'
+    end
     resources :questions
     resources :comments
   end
