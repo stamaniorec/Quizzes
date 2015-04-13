@@ -1,40 +1,67 @@
-<p id="notice"><%= notice %></p>
+<!--
+    <%# @links.each do |link| %>
+  <div class="link row clearfix">
+    <h2>
+      <%# link_to link.title, link %><br>
+      <small class="author">Submitted <%# time_ago_in_words(link.created_at) %> by <%# link.user.name %></small>
+    </h2>
 
-<h1>Listing Quizzes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @quizzes.each do |quiz| %>
-      <tr>
-        <td><%= quiz.name %></td>
-        <td> <%= quiz.user.email %> </td>
-        <td><%= link_to 'Show', quiz %></td>
-        <% if quiz.user == current_user %>
-          <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
-          <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-        <td><%= link_to 'Upvote', like_quiz_path(quiz), method: :put %></td>
-        <td><%= link_to 'Downvote', dislike_quiz_path(quiz), method: :put %></td>
-        <td>Likes: <%= quiz.get_upvotes.size %></td>
-        <td>Dislikes: <%= quiz.get_downvotes.size %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<div class = "digg_pagination">
-	<div class="page_info">
-      <%= page_entries_info @quizzes %>
+    <div class="btn-group">
+      <a class="btn btn-default btn-sm" href="<%# link.url %>">Visit Link</a>
+      <%# link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Upvote
+        <%# link.get_upvotes.size %>
+      <%# end %>
+      <%# link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-down">
+        Downvote
+        <%# link.get_downvotes.size %>
+      <%# end %>
     </div>
-<%= will_paginate @quizzes, :container => false %>
-</div>
+  </div>
+<%# end %>
+-->
 
-<%= link_to 'New Quiz', new_quiz_path %>
+  <div class="col-md-3 sidebar-nav"> <!-- well -->
+    <ul class="nav nav-sidebar">
+      <li><%= link_to 'Leaderboard', leaderboard_path %></li>
+      <li><%= link_to 'Advanced Search', search_index_path %></li>
+    </ul>
+  </div>
+  <div id="main-content" class="col-md-9 text-center centered-block">
+    
+    <%= social_share_button_tag("Really enjoying myself at", url: 'http://google.com/', popup: "true") %>
+
+    <%= form_tag quizzes_path, method: 'get' do %>
+        <%= text_field_tag :quiz_search, params[:quiz_search], placeholder: 'Search Quizzes', class: "form-control" %>
+    <% end %>
+
+    <% @quizzes.each do |quiz| %>
+      <div class="quiz row clearfix">
+        <h4>
+          <%= link_to quiz.name %><br>
+          <small class="author">Author: <%= quiz.user.email %></small>
+        </h4>
+
+        <div class="btn-group">
+          <%= link_to like_quiz_path(quiz), method: :put, class: "btn btn-default btn-sm" do %>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            Upvote
+            <%= quiz.get_upvotes.size %>
+          <% end %>
+          <%= link_to dislike_quiz_path(quiz), method: :put, class: "btn btn-default btn-sm" do %>
+            <span class="glyphicon glyphicon-chevron-down">
+            Downvote
+            <%= quiz.get_downvotes.size %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class = "digg_pagination">
+      <%= will_paginate @quizzes, class: "pagination pagination-centered" %>
+    </div>
+    
+  </div>
+

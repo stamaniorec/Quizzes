@@ -15,3 +15,26 @@
  *= require_self
  */
  
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo a {
+	text-decoration: none;
+}
+
+.sidebar-nav {
+	padding: 9px 9px;
+
+	li {
+		color: #337ab7;
+		font-size: 22px;
+		margin: 9px 0;
+		letter-spacing: 2px;
+	}
+}
+
+#main-content {
+	.quiz {
+		margin: 20px 0;
+	}
+}

@@ -7,6 +7,13 @@ class QuizzesController < ApplicationController
 
   def index
     @quizzes = Quiz.paginate(:page => params[:page], :per_page => 4)
+    if params[:quiz_search]
+      if params[:quiz_search].blank?
+        redirect_to root_path
+      else
+        @quizzes = @quizzes.search_for params[:quiz_search]
+      end
+    end
   end
 
   def show

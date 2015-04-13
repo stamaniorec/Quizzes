@@ -39,9 +39,15 @@ GEM
     acts_as_votable (0.10.0)
     ambry (0.3.1)
     arel (6.0.0)
+    autoprefixer-rails (5.1.8.1)
+      execjs
+      json
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.4.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -177,6 +183,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
+  bootstrap-sass (~> 3.3.4)
   byebug
   cocoon (~> 1.2.6)
   coffee-rails (~> 4.1.0)
@@ -187,7 +194,7 @@ DEPENDENCIES
   mysql2
   quiz_master (~> 0.0.3)
   rails (= 4.2.0)
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   scoped_search
   sdoc (~> 0.4.0)
   social-share-button
