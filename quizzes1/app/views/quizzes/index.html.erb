@@ -40,8 +40,8 @@
     <% @quizzes.each do |quiz| %>
       <div class="quiz row clearfix">
         <h4>
-          <%= link_to quiz.name %><br>
-          <small class="author">Author: <%= quiz.user.email %></small>
+          <%= link_to quiz.name, quiz %><br>
+          <small class="author">Author: <%= link_to quiz.user.email, user_show_path(quiz.user.id) %></small>
         </h4>
 
         <div class="btn-group">
