@@ -3,18 +3,20 @@
 	<%= @quiz.name %>
 </p>
 
-<%= form_for @score do |f| %>
+<%= bootstrap_form_for @score do |f| %>
 	<% if @quiz_variant.nil? %>
 		<p>This quiz is empty.</p>
 	<% else %>
-		<% @quiz_variant.questions.each_with_index do |question, index| %>
-			<p><%= question.prompt %></p>
-			<% correct_answer = -1 %>
-			<% question.answers.each_with_index do |answer, index2| %>
-				<input type="radio" name="answer[<%= index %>]" value="<%= index2 %>"><%= answer.text %><br>
-				<% correct_answer = index2 if answer.correct? %>
+		<%= f.form_group :answers do %>
+			<% @quiz_variant.questions.each_with_index do |question, index| %>
+				<p><%= question.prompt %></p>
+				<% correct_answer = -1 %>
+				<% question.answers.each_with_index do |answer, index2| %>
+					<%= f.radio_button "#{index}", index2, label: answer.text, checked: false, name: "answer[#{index}]" %>
+					<% correct_answer = index2 if answer.correct? %>
+				<% end %>
+				<input type="hidden" name="correct[<%= index %>]" value="<%= correct_answer %>">
 			<% end %>
-			<input type="hidden" name="correct[<%= index %>]" value="<%= correct_answer %>">
 		<% end %>
 		<input type="hidden" name="quiz_id" value="<%= @quiz.id %>">
 		<input type="hidden" name="user_id" value="<%= current_user.nil? ? -1 : current_user.id %>">

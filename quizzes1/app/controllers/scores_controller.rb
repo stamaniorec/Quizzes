@@ -22,8 +22,10 @@ class ScoresController < ApplicationController
     score = num_correct / num_questions.to_f * 100 # convert to percentage
 
     @score = Score.new(score: score.to_i, quiz_id: params[:quiz_id], user_id: params[:user_id])
-    current_user.add_points(num_correct * 1, category: 'Play')
-    
+    if user_signed_in?
+      current_user.add_points(num_correct * 1, category: 'Play')
+    end
+
     respond_to do |format|
       if @score.save
         format.html { redirect_to @score, notice: 'Score was successfully created.' }

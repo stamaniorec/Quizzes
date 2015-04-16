@@ -48,6 +48,7 @@ GEM
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -184,6 +185,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   bootstrap-sass (~> 3.3.4)
+  bootstrap_form
   byebug
   cocoon (~> 1.2.6)
   coffee-rails (~> 4.1.0)
