@@ -1,40 +1,49 @@
 class CommentsController < ApplicationController
+  before_action :set_quiz, only: [:create, :edit]
+  before_action :set_comment, except: [:create]
+
   def create
-    @quiz = Quiz.find(params[:quiz_id])
-    @comment = @quiz.comments.new(comment_params)
+    @comment = @quiz.comments.build comment_params
     @comment.user = current_user
     
     if @comment.save
       redirect_to @quiz, notice: 'Comment was successfully created.'
     else
-      redirect_to @quiz, notice: 'Comment is empty, cannot post.'
+      redirect_to @quiz, alert: 'Comment is empty, cannot post.'
     end
   end
 
   def edit
-  	@comment = Comment.find(params[:id])
-  	@quiz = Quiz.find(params[:quiz_id])
   end
 
-  def update
-    @comment = Comment.find(params[:id])
-    
-    if @comment.update(comment_params)
+  def update    
+    if @comment.update comment_params
       redirect_to quiz_path(@comment.quiz), notice: 'Comment was successfully updated.'
     else
-      redirect_to quiz_path(@comment.quiz), notice: 'Comment is empty, cannot update.'
+      redirect_to quiz_path(@comment.quiz), alert: 'Comment is empty, cannot update.'
     end
   end
 
   def destroy
-    Comment.find(params[:id]).destroy
-    redirect_to :back, notice: 'Comment was successfully destroyed.'
+    if @comment.destroy
+      redirect_to :back, notice: 'Comment was successfully destroyed.'
+    else
+      redirect_to :back, alert: 'Your comment could not be destroyed.'
+    end
   end
 
   private
 
-  def comment_params
-    params.require(:comment).permit(:quiz_id, :body, :user_id, :id)
-  end
+    def comment_params
+      params.require(:comment).permit(:quiz_id, :body, :user_id, :id)
+    end
+
+    def set_quiz
+      @quiz = Quiz.find params[:quiz_id]
+    end
+
+    def set_comment
+      @comment = Comment.find params[:id]
+    end
 
 end

@@ -26,22 +26,10 @@ class ScoresController < ApplicationController
       current_user.add_points(num_correct * 1, category: 'Play')
     end
 
-    respond_to do |format|
-      if @score.save
-        format.html { redirect_to @score, notice: 'Score was successfully created.' }
-        format.json { render :show, status: :created, location: @score }
-      else
-        format.html { render :new }
-        format.json { render json: @score.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @score.destroy
-    respond_to do |format|
-      format.html { redirect_to scores_url, notice: 'Score was successfully destroyed.' }
-      format.json { head :no_content }
+    if @score.save
+      redirect_to @score, notice: 'Score was successfully created.'
+    else
+      redirect_to root_path, alert: 'Whoops, something went wrong. Your score could not be saved.'
     end
   end
 

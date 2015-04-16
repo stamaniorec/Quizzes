@@ -1,11 +1,11 @@
 <div class="text-center">
-<p>
-	<strong>Score:</strong>
-	<%= @score.score %>
-</p>
-<% unless user_signed_in? %>
-	<p>Please log in in order to save your scores and have fun with your friends!</p>
-<% end %>
+	<p>
+		<strong>Score:</strong>
+		<%= @score.score %>
+	</p>
+	<% unless user_signed_in? %>
+		<p>Please log in in order to save your scores and have fun with your friends!</p>
+	<% end %>
 
-<%= link_to 'Back', quizzes_path %>
+	<%= link_to 'Back', quizzes_path %>
 </div>

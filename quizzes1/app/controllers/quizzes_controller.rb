@@ -30,43 +30,33 @@ class QuizzesController < ApplicationController
   end
 
   def create
-    @quiz = current_user.quizzes.build(quiz_params)
+    @quiz = current_user.quizzes.build quiz_params
 
     points_to_award = 0
     @quiz.questions.each { points_to_award += 1 }
     current_user.add_points(points_to_award * 3, category: 'Create')
 
-    respond_to do |format|
-      if @quiz.save
-        format.html { redirect_to @quiz, notice: 'Quiz was successfully created.' }
-        format.json { render :show, status: :created, location: @quiz }
-      else
-        format.html { render :new }
-        format.json { render json: @quiz.errors, status: :unprocessable_entity }
-      end
+    if @quiz.save
+      redirect_to @quiz, notice: 'Quiz was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @quiz.update(quiz_params)
-        format.html { redirect_to @quiz, notice: 'Quiz was successfully updated.' }
-        format.json { render :show, status: :ok, location: @quiz }
-      else
-        format.html { render :edit }
-        format.json { render json: @quiz.errors, status: :unprocessable_entity }
-      end
+    if @quiz.update quiz_params
+      redirect_to @quiz, notice: 'Quiz was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
-    @quiz.destroy
-
-    remove_badges_if_necessary
-    
-    respond_to do |format|
-      format.html { redirect_to quizzes_url, notice: 'Quiz was successfully destroyed.' }
-      format.json { head :no_content }
+    if @quiz.destroy
+      remove_badges_if_necessary
+      redirect_to quizzes_url, notice: 'Quiz was successfully destroyed.'
+    else
+      redirect_to @quiz, alert: 'Quiz could not be destroyed.'
     end
   end
 
@@ -82,15 +72,15 @@ class QuizzesController < ApplicationController
     redirect_to :back
   end
 
-  # Makes sure you cannot modify quizzes that do not belong to you through url
-  def check_authentication
-    if @quiz.user != current_user
-      redirect_to quizzes_path
-      flash[:notice] = 'Can be modified only by the owner.' 
-    end
-  end
-
   private
+    # Makes sure you cannot modify quizzes that do not belong to you through url
+    def check_authentication
+      if @quiz.user != current_user
+        redirect_to quizzes_path
+        flash[:alert] = 'Can be modified only by the owner.' 
+      end
+    end
+
     def set_quiz
       @quiz = Quiz.find(params[:id])
     end
