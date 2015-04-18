@@ -28,11 +28,8 @@ Rails.application.routes.draw do
   get 'users/:id'=> 'users#show', as: 'user_show'
 
   #Leaderboard routes
-  get 'leaderboard/play' => 'leaderboard#show_play_leaderboard', as: 'play_leaderboard'
-  get 'leaderboard/create' => 'leaderboard#show_create_leaderboard', as: 'create_leaderboard'
-  get 'leaderboard/general' => 'leaderboard#show_general_leaderboard', as: 'show_general_leaderboard'
-  match 'leaderboard', to: 'leaderboard#show_general_leaderboard', via: :get
-  
+  get 'leaderboard' => 'leaderboard#show'
+
   #Search routes
   get 'search' => 'search#index', as: 'search_index'
   get 'search_results' => 'search#show', as: 'search_results'
