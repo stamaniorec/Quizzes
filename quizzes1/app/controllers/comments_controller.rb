@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_quiz, only: [:create, :edit]
   before_action :set_comment, except: [:create]
+  before_action :authenticate_user!, only: [:create]
 
   def create
     @comment = @quiz.comments.build comment_params

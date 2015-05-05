@@ -18,9 +18,14 @@
  /*
  *= require rails_bootstrap_forms
  */
+
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
 
 #logo a {
 	text-decoration: none;
@@ -37,8 +42,7 @@
 	}
 }
 
-#main-content {
-	.quiz {
-		margin: 20px 0;
-	}
+.slick-btn {
+	font-size: 14px;
+	padding: 1px 14px;
 }

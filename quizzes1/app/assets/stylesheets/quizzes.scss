@@ -1,3 +1,19 @@
 // Place all the styles related to the Quizzes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#quiz_form {
+	font-size: 16px;
+}
+
+#quiz-title {
+	display: inline-block;
+	margin-top: 0;
+	margin-bottom: 30px;
+	border-bottom: 1px solid gray;
+	padding-bottom: 10px;
+}
+
+.question-text {
+	font-weight: bold;
+}
