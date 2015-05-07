@@ -50,7 +50,7 @@ module Merit
       end
 
       grant_on 'scores#create', badge_id: 2, to: :user do |score|
-        score.user.scores.count >= 5
+        score.user.scores.count >= 5 if score.user
       end
     end
   end

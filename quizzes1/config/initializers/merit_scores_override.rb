@@ -38,13 +38,13 @@ module Merit
       }
       
       query_results = ActiveRecord::Base.connection.execute sql_query
-      result = Array.new
+      results = Array.new
       
-      query_results.map do |result|
-        result << { user_id: result.first, sum_points: result.last }
+      query_results.each do |result|
+        results << { user_id: result.first, sum_points: result.last }
       end
       
-      result
+      results
     end
   end
 end

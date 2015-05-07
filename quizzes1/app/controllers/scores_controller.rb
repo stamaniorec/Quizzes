@@ -22,24 +22,14 @@ class ScoresController < ApplicationController
     score = num_correct / num_questions.to_f * 100 # convert to percentage
 
     @score = Score.new(score: score.to_i, quiz_id: params[:quiz_id], user_id: params[:user_id])
-    current_user.add_points(num_correct * 1, category: 'Play')
-    
-    respond_to do |format|
-      if @score.save
-        format.html { redirect_to @score, notice: 'Score was successfully created.' }
-        format.json { render :show, status: :created, location: @score }
-      else
-        format.html { render :new }
-        format.json { render json: @score.errors, status: :unprocessable_entity }
-      end
+    if user_signed_in?
+      current_user.add_points(num_correct * 1, category: 'Play')
     end
-  end
 
-  def destroy
-    @score.destroy
-    respond_to do |format|
-      format.html { redirect_to scores_url, notice: 'Score was successfully destroyed.' }
-      format.json { head :no_content }
+    if @score.save
+      redirect_to @score, notice: 'Score was successfully created.'
+    else
+      redirect_to root_path, alert: 'Whoops, something went wrong. Your score could not be saved.'
     end
   end
 

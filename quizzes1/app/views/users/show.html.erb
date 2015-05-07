@@ -1,39 +1,68 @@
-<p>hello, <%= @user.email.split('@').first %></p>
-<h1>Listing Quizzes<h1>
-<p><% @quizzes.each do |quiz| %>
-	<%= link_to(quiz.name, quiz) %>
-	<br>
-<% end %></p>
-<h1>Listing Scores<h1>
-<table>
-	<tr>
-		<td>Name</td>
-		<td>Score</td>
-		<td>Date</td>
-	</tr>
-	<% @scores.each do |score| %>
-		<tr>
-			<td><%= score.quiz.name %></td> 
-			<td><%= score.score %></td> 
-			<td><%= score.created_at %></td>
-		</tr>
-	<% end %>
-<table>
-
-<h1>Listing badges</h1>
-<ul>
-	<% @user.badges.each do |badge| %>
-		<li><%= badge.name %></li>
-	<% end %>
+<p>hello, fella<%#= @user.email.split('@').first %></p>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#Quizzes">Quizzes</a></li>
+    <li><a data-toggle="tab" href="#Scores">Scores</a></li>
+    <li><a data-toggle="tab" href="#Achievments">Achievments</a></li>
 </ul>
+<div class="tab-content">
 
-<h1>Points for playing<h1>
-<%= current_user.points(category: 'Play') %>
+<!-- Quizzes -->
 
-<h1>Points for creating<h1>
-<%= current_user.points(category: 'Create') %>
+	<div id="Quizzes" class="tab-pane fade in active">
+		<h1>Listing Quizzes<h1>
+		<table>
+		<% @quizzes.each do |quiz| %>
+			<tr>
+				<td><%= link_to(quiz.name, quiz) %></td>
+				<% if @user == current_user %>
+					<td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
+					<td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure you want to delete?' } %></td>
+				<% end %>
+				</tr>
+		<% end %>
+		</table>
+	</div>
 
-<h1>All points<h1>
-<%= current_user.points %>
+<!-- Scores -->
+
+	<div id="Scores" class="tab-pane fade">
+		<h1>Listing Scores<h1>
+		<table>
+			<tr>
+				<td>Name</td>
+				<td>Score</td>
+				<td>Date</td>
+			</tr>
+			<% @scores.each do |score| %>
+				<tr>
+					<td><%= link_to score.quiz.name, score.quiz %></td> 
+					<td><%= score.score %></td> 
+					<td><%= score.created_at %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+
+<!-- Achievments -->
+
+	<div id="Achievments" class="tab-pane fade">
+		<h1>Listing badges</h1>
+		<ul>
+			<% @user.badges.each do |badge| %>
+				<li><%= badge.name %></li>
+			<% end %>
+		</ul>
+
+		<h1>Points for playing<h1>
+		<%= @user.points(category: 'Play') %>
+
+		<h1>Points for creating<h1>
+		<%= @user.points(category: 'Create') %>
+
+		<h1>All points<h1>
+		<%= @user.points %>
+	</div>
+	
+</div>
 
 <p><%= link_to 'Back', root_path %></p>

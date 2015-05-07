@@ -1,0 +1,8 @@
+<h1><%= heading %></h1>
+<ol>
+	<% top_results.each do |hash| %>
+		<% user_username = User.find(hash[:user_id].to_i).username %>
+		<% user_score = hash[:sum_points] %>
+		<li><%= link_to(user_username, user_show_path(User.find(hash[:user_id].to_i))) %><%= "-> #{user_score}" %></li>
+	<% end %>
+</ol>

@@ -1,5 +1,5 @@
 <h1>Submit a comment</h1>
-<%= form_for [@quiz, @quiz.comments.build] do |f| %>
+<%= bootstrap_form_for [@quiz, @quiz.comments.build] do |f| %>
   <div class="field">
     <%= f.text_area :body %>
   </div>

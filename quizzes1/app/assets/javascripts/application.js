@@ -17,3 +17,5 @@
 //= require_tree .
 
 //= require cocoon
+
+//= require bootstrap-sprockets

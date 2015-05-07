@@ -4,6 +4,6 @@
 <% @results.each do |quiz| %>
 	<p>
 		<%= link_to quiz.name, quiz %>
-		<span>--> <%= quiz.user.email %></span>
+		<span> from <%= link_to(quiz.user.username, user_show_path(quiz.user.id)) %></span>
 	</p>
 <% end %>
