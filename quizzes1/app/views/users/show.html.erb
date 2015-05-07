@@ -1,4 +1,8 @@
-<p>hello, fella<%#= @user.email.split('@').first %></p>
+<% if current_user==@user %>
+	<p> hello, <%= @user.email.split('@').first %></p>
+<% else %>
+	<p>hello, intruder</p>
+<% end %>
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#Quizzes">Quizzes</a></li>
     <li><a data-toggle="tab" href="#Scores">Scores</a></li>
@@ -9,8 +13,9 @@
 <!-- Quizzes -->
 
 	<div id="Quizzes" class="tab-pane fade in active">
-		<h1>Listing Quizzes<h1>
-		<table>
+		<!-- <h1>Listing Quizzes<h1> -->
+		<br>
+		<table class="table table-hover">
 		<% @quizzes.each do |quiz| %>
 			<tr>
 				<td><%= link_to(quiz.name, quiz) %></td>
@@ -26,12 +31,13 @@
 <!-- Scores -->
 
 	<div id="Scores" class="tab-pane fade">
-		<h1>Listing Scores<h1>
-		<table>
+		<!-- <h1>Listing Scores<h1> -->
+		<br>
+		<table class="table table-bordered">
 			<tr>
-				<td>Name</td>
-				<td>Score</td>
-				<td>Date</td>
+				<td><b>Name</b></td>
+				<td><b>Score</b></td>
+				<td><b>Date</b></td>
 			</tr>
 			<% @scores.each do |score| %>
 				<tr>
@@ -46,21 +52,25 @@
 <!-- Achievments -->
 
 	<div id="Achievments" class="tab-pane fade">
-		<h1>Listing badges</h1>
-		<ul>
+		<!-- <h1>Listing Achievements<h1> -->
+		<br>
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#badges">
+		   List badges
+		</button>
+
+		<div id="badges" class="collapse in">
+			<ul>
 			<% @user.badges.each do |badge| %>
 				<li><%= badge.name %></li>
-			<% end %>
-		</ul>
+				<% end %>
+			</ul>	
+		</div>
 
-		<h1>Points for playing<h1>
-		<%= @user.points(category: 'Play') %>
+		<h3>Points for playing: <%= @user.points(category: 'Play') %><h3>
+		
+		<h3>Points for creating: <%= @user.points(category: 'Create') %><h3>
 
-		<h1>Points for creating<h1>
-		<%= @user.points(category: 'Create') %>
-
-		<h1>All points<h1>
-		<%= @user.points %>
+		<h3>All points: <%= @user.points %><h3>
 	</div>
 	
 </div>

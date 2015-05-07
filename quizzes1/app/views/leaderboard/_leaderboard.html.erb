@@ -1,8 +1,19 @@
 <h1><%= heading %></h1>
-<ol>
+<table class="table table-hover">
+	<tr>
+		<td><b>#</b></td>
+		<td><b>Username</b></td>
+		<td><b>Score</b></td>
+	</tr>
+	<% number=0 %>
 	<% top_results.each do |hash| %>
 		<% username = User.find(hash[:user_id].to_i).username %>
 		<% user_score = hash[:sum_points] %>
-		<li><%= link_to(username, user_show_path(User.find(hash[:user_id].to_i))) %><%= "-> #{user_score}" %></li>
+		<% number+=1 %>
+		<tr>
+			<td><%= number %></td>
+			<td><%= link_to(username, user_show_path(User.find(hash[:user_id].to_i))) %></td>
+			<td><%= user_score %></td>
+		</tr>
 	<% end %>
-</ol>
+</table>

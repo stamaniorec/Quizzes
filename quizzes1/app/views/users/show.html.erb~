@@ -1,0 +1,78 @@
+<% if current_user==@user %>
+	<p> hello, <%= @user.email.split('@').first %></p>
+<% else %>
+	<p>hello, intruder</p>
+<% end %>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#Quizzes">Quizzes</a></li>
+    <li><a data-toggle="tab" href="#Scores">Scores</a></li>
+    <li><a data-toggle="tab" href="#Achievments">Achievments</a></li>
+</ul>
+<div class="tab-content">
+
+<!-- Quizzes -->
+
+	<div id="Quizzes" class="tab-pane fade in active">
+		<!-- <h1>Listing Quizzes<h1> -->
+		<br>
+		<table class="table table-hover">
+		<% @quizzes.each do |quiz| %>
+			<tr>
+				<td><%= link_to(quiz.name, quiz) %></td>
+				<% if @user == current_user %>
+					<td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
+					<td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure you want to delete?' } %></td>
+				<% end %>
+				</tr>
+		<% end %>
+		</table>
+	</div>
+
+<!-- Scores -->
+
+	<div id="Scores" class="tab-pane fade">
+		<!-- <h1>Listing Scores<h1> -->
+		<br>
+		<table class="table table-bordered">
+			<tr>
+				<td><b>Name</b></td>
+				<td><b>Score</b></td>
+				<td><b>Date</b></td>
+			</tr>
+			<% @scores.each do |score| %>
+				<tr>
+					<td><%= link_to score.quiz.name, score.quiz %></td> 
+					<td><%= score.score %></td> 
+					<td><%= score.created_at %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+
+<!-- Achievments -->
+
+	<div id="Achievments" class="tab-pane fade">
+		<!-- <h1>Listing Achievements<h1> -->
+		<br>
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#badges">
+		   List badges
+		</button>
+
+		<div id="badges" class="collapse in">
+			<ul list-style-type: none>
+			<% @user.badges.each do |badge| %>
+				<li><%= badge.name %></li>
+				<% end %>
+			</ul>	
+		</div>
+
+		<h3>Points for playing: <%= @user.points(category: 'Play') %><h3>
+		
+		<h3>Points for creating: <%= @user.points(category: 'Create') %><h3>
+
+		<h3>All points: <%= @user.points %><h3>
+	</div>
+	
+</div>
+
+<p><%= link_to 'Back', root_path %></p>
