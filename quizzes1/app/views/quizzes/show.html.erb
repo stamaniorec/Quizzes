@@ -7,6 +7,7 @@
 		<%= f.form_group :answers do %>
 			<% @quiz_variant.questions.each_with_index do |question, index| %>
 				<p class="question-text"><%= question.prompt %></p>
+				<p><%= question.prompt %></p>
 				<% correct_answer = -1 %>
 				<% question.answers.each_with_index do |answer, index2| %>
 					<%= f.radio_button "#{index}", index2, label: answer.text, checked: false, name: "answer[#{index}]" %>

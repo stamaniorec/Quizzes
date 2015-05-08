@@ -1,0 +1,4 @@
+class DeleteUsernames < ActiveRecord::Migration
+  def change
+  end
+end

@@ -32,6 +32,8 @@
   		</div>
 	</header>
 
+	<div align="center"><%= google_adsense_include_tag client: 'pub-1234', slot: '1234' %></div>
+
 	<div class="container">
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-info") %>

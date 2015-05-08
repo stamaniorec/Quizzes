@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(version: 20150421082019) do
 
   create_table "answers", force: :cascade do |t|
-    t.integer "question_id", limit: 4
     t.string  "value",       limit: 255
     t.boolean "is_correct",  limit: 1
     t.boolean "anchored",    limit: 1
+    t.integer "question_id", limit: 4
   end
 
-  add_index "answers", ["question_id"], name: "question_id", using: :btree
+  add_index "answers", ["question_id"], name: "answers_ibfk_1", using: :btree
 
   create_table "badges_sashes", force: :cascade do |t|
     t.integer  "badge_id",      limit: 4
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20150421082019) do
     t.integer "quiz_id",  limit: 4,  null: false
   end
 
-  add_index "questions", ["quiz_id"], name: "quiz_id", using: :btree
+  add_index "questions", ["quiz_id"], name: "questions_ibfk_1", using: :btree
 
   create_table "quizzes", force: :cascade do |t|
     t.string  "name",     limit: 50, null: false
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 20150421082019) do
     t.datetime "updated_at"
   end
 
-  add_index "scores", ["quiz_id"], name: "quiz_id", using: :btree
+  add_index "scores", ["quiz_id"], name: "scores_ibfk_1", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -143,4 +143,7 @@ ActiveRecord::Schema.define(version: 20150421082019) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  add_foreign_key "answers", "questions", name: "answers_ibfk_1"
+  add_foreign_key "questions", "quizzes", name: "questions_ibfk_1"
+  add_foreign_key "scores", "quizzes", name: "scores_ibfk_1"
 end
