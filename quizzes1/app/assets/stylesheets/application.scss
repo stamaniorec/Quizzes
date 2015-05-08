@@ -43,6 +43,15 @@ body {
 }
 
 .slick-btn {
+	@extend .btn;
+	@extend .btn-sm;
+	@extend .btn-default;
 	font-size: 14px;
 	padding: 1px 14px;
+}
+
+/* in forms the button stays pressed, this disables */
+.slick-btn:focus {
+    background-color: #fff;
+    border-color: #ccc;
 }

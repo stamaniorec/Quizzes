@@ -16,20 +16,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :shuffled, "Do you want to shuffle the questions and the answers?" %>
-    <%= f.check_box :shuffled %>
+    <%= f.check_box :shuffled, label: "Do you want to shuffle the questions and the answers?" %>
   </div>
 
   <div class="field">
     <%= f.fields_for :questions do |question_builder| %>
       <%= render 'question_fields', f: question_builder %>
     <% end %>
-    <br />
     <div class="links">
       <%= link_to_add_association 'Add Question', f, :questions %>
     </div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

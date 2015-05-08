@@ -8,8 +8,10 @@ class Quiz < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   
   scoped_search on: :name
-  scoped_search in: :user, on: :email
+  scoped_search in: :user, on: :username
   scoped_search in: :questions, on: :question
+
+  validates :name, presence: true
 
   acts_as_votable
 end

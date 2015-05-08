@@ -24,9 +24,9 @@
 <br />
 
 <% if @quiz.user == current_user %>
-	<%= link_to 'Edit', edit_quiz_path(@quiz), class: "btn btn-md btn-default slick-btn" %>
+	<%= link_to 'Edit', edit_quiz_path(@quiz), class: 'slick-btn' %>
 <% end %>
-<%= link_to 'Back', quizzes_path, class: "btn btn-md btn-default slick-btn" %>
+<%= link_to 'Back', quizzes_path, class: 'slick-btn' %>
 
 <%= render 'comments/comments', comments: @quiz.comments, quiz: @quiz %>
 <%= render 'comments/form' %>

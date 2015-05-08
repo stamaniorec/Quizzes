@@ -1,13 +1,10 @@
-<div class="nested-fields">
+<div class="nested-fields form-inline">
   <br>
-  <%= f.label :value, 'Answer: ' %><br>
-  <%= f.text_field :value %>
+  <%= f.text_field :value, label: "Answer:", size: 30 %>
 
-  <%= f.label :is_correct, 'Correct?' %>
-  <%= f.check_box :is_correct %>
+  <%= f.check_box :is_correct, label: 'Correct?' %>
 
-  <%= f.label :anchored, 'Anchored?' %>
-  <%= f.check_box :anchored %><br>
+  <%= f.check_box :anchored, label: 'Anchored?' %>
 
-  <%= link_to_remove_association 'Remove Answer', f %>
+  <%= link_to_remove_association 'Remove Answer', f, class: 'btn btn-md btn-default slick-btn' %>
 </div>

@@ -33,7 +33,7 @@ end
   has_many :scores
   has_many :comments
   
-  scoped_search :on => :email
+  scoped_search on: :username
 
   acts_as_voter
 end

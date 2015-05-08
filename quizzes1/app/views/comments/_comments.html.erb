@@ -8,8 +8,8 @@
 
 		<div class="btn-group pull-right">
 			<% if comment.user == current_user -%>
-				<%= link_to 'Edit', edit_quiz_comment_path(quiz, comment), class: "btn btn-sm btn-default slick-btn" %>
-				<%= link_to 'Destroy', [quiz, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default slick-btn" %>
+				<%= link_to 'Edit', edit_quiz_comment_path(quiz, comment), class: 'slick-btn' %>
+				<%= link_to 'Destroy', [quiz, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: 'slick-btn' %>
 			<% end %>
 		</div>
 	</div>
