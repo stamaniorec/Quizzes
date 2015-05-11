@@ -9,11 +9,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header class="navbar navbar-default" role="navigation">
-		<div class="navbar-inner">
-			<div class="container">
+	<!-- <div class="container"> -->
+		<header class="navbar navbar-default" role="navigation">
+		<div class="navbar-inner container">
+			<div class="navbar-header">
 				<div id="logo" class="navbar-brand"><%= link_to "Quizzes", root_path %></div>
-				<nav class="collapse navbar-collapse navbar-ex1-collapse">
+	            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	              <span class="sr-only">Toggle navigation</span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	            </button>
+        	</div>
+			<!-- <div class="container"> -->
+				<nav id="navbar" class="collapse navbar-collapse navbar-ex1-collapse">
 					<% if user_signed_in? %>
 						<ul class="nav navbar-nav navbar-right">
 							<li><%= link_to 'New Quiz', new_quiz_path %></li>
@@ -28,31 +37,52 @@
 						</ul>
 					<% end %>
 				</nav>
-			</div>
+			<!-- </div> -->
   		</div>
 	</header>
-
-	<div align="center"><%= google_adsense_include_tag client: 'pub-1234', slot: '1234' %></div>
+	<!-- </div> -->
 
 	<div class="container">
-		<% flash.each do |name, msg| %>
-			<%= content_tag(:div, msg, class: "alert alert-info") %>
-		<% end %>
+		<div class="mobile-ad" align="center">
+			<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '400', height: '150' %>
+		</div>
+		<div class="mobile-ad" align="center">
+			<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '400', height: '150' %>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-sm-1 col-xs-1" align="center">
+				<div class="desktop-ad">
+					<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '150', height: '300' %>
+				</div>
+				<div class="desktop-ad">
+					<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '150', height: '300' %>
+				</div>
+			</div>
+			<div class="col-md-8 col-xs-10">
+				<% flash.each do |name, msg| %>
+					<%= content_tag(:div, msg, class: "alert alert-info") %>
+				<% end %>
 
-		<%= yield %>
+				<%= yield %>
+			</div>
+			<div class="col-md-2 col-sm-1" align="center">
+				<div class="desktop-ad">
+					<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '150', height: '300' %>
+				</div>
+				<div class="desktop-ad">
+					<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '150', height: '300' %>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-ad" align="center">
+			<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '400', height: '150' %>
+		</div>
+		<div class="mobile-ad" align="center">
+			<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '400', height: '150' %>
+		</div>
+		<div class="panel-footer">
+		    <!-- <h3>Footer</h3> -->
+		</div>
 	</div>
 </body>
 </html>
-
-<!--
-	<%= social_share_button_tag("test00", :url => 'http://localhost:3000/') %>
-
-	<%= form_tag search_results_path, method: 'get' do %>
-		<%= text_field_tag :quiz_search, params[:quiz_search], placeholder: 'Search Quizzes' %>
-		<%= submit_tag 'Search', name: nil %>
-
-		<br>
-			<%= link_to 'Advanced Search', search_index_path %>
-		<br>
-	<% end %>
--->

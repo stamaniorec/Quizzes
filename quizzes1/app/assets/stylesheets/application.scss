@@ -41,6 +41,12 @@ body {
 	}
 }
 
+@media screen and (max-width: 1000px) {
+	.sidebar-nav {
+		text-align: center;
+	}
+} 
+
 .slick-btn {
 	@extend .btn;
 	@extend .btn-sm;
@@ -49,8 +55,28 @@ body {
 	padding: 1px 14px;
 }
 
-/* in forms the button stays pressed, this disables */
+/* in forms the button stays pressed, this disables it */
 .slick-btn:focus {
     background-color: #fff;
     border-color: #ccc;
 }
+
+.desktop-ad, .mobile-ad {
+	margin-bottom: 25px;
+}
+
+@media screen and (max-width: 1000px) {
+	.desktop-ad {
+		display: none;
+	}
+	.mobile-ad {
+		margin-top: 25px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.mobile-ad {
+		display: none;
+	}
+}
+
