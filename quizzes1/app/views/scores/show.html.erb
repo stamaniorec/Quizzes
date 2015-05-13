@@ -2,7 +2,26 @@
 	<p>
 		<strong>Score:</strong>
 		<%= @score.score %>
+		<br>
+		<% case @score.score %>
+		<% when 90..100 %>
+			<strong>Perfect</strong><br>
+			You should definetly post it.
+		<% when 70..90 %>
+			<strong>Very Good</strong><br>
+			Show your friends how Very Good you are.
+		<% when 50..70 %>
+			<strong>Good</strong><br>
+			A Good score! Boast about it to your friends!
+		<% when 25..50 %>
+			<strong>Try again</strong><br>
+			You can post that to your friends. But you can probably do better.
+		<% when 0..25 %>
+			<strong>Maybe some other time!</strong><br>
+			You should probably try another topic.
+		<% end %>
 	</p>
+	<%= social_share_button_tag("Got #{@score.score} on #{@score.quiz.name}", url: 'http://google.com/', popup: "true") %>
 	<% unless user_signed_in? %>
 		<p>Please log in in order to save your scores and have fun with your friends!</p>
 	<% end %>
