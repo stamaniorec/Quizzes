@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     
     if @comment.save
-      redirect_to @quiz, notice: 'Comment was successfully created.'
+      redirect_to @quiz, notice: 'Comment was successfully posted. You won 1 point.'
     else
-      redirect_to @quiz, alert: 'Comment is empty, cannot post.'
+      redirect_to @quiz, alert: 'Comment is empty, cannot be posted.'
     end
   end
 
@@ -27,9 +27,9 @@ class CommentsController < ApplicationController
 
   def destroy
     if @comment.destroy
-      redirect_to :back, notice: 'Comment was successfully destroyed.'
+      redirect_to :back, notice: 'Comment was successfully deleted.'
     else
-      redirect_to :back, alert: 'Your comment could not be destroyed.'
+      redirect_to :back, alert: 'Your comment could not be deleted.'
     end
   end
 

@@ -1,12 +1,11 @@
-<% if current_user==@user %>
-	<p> hello, <%= @user.email.split('@').first %></p>
-<% else %>
-	<p>hello, intruder</p>
-<% end %>
+<div id="user_info" class="panel panel-default">
+	<p>Username: <%= @user.email %></p>
+	<p>Member since <%= @user.created_at.strftime("%B %d, %Y")%></p>
+</div>
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#Quizzes">Quizzes</a></li>
     <li><a data-toggle="tab" href="#Scores">Scores</a></li>
-    <li><a data-toggle="tab" href="#Achievments">Achievments</a></li>
+    <li><a data-toggle="tab" href="#Achievements">Achievements</a></li>
 </ul>
 <div class="tab-content">
 
@@ -43,7 +42,7 @@
 				<tr>
 					<td><%= link_to score.quiz.name, score.quiz %></td> 
 					<td><%= score.score %></td> 
-					<td><%= score.created_at %></td>
+					<td><%= score.created_at.strftime("%B %d, %Y") %></td>
 				</tr>
 			<% end %>
 		</table>
@@ -51,14 +50,14 @@
 
 <!-- Achievments -->
 
-	<div id="Achievments" class="tab-pane fade">
+	<div id="Achievements" class="tab-pane fade">
 		<!-- <h1>Listing Achievements<h1> -->
 		<br>
-		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#badges">
+		<button type="button" class="slick-btn" data-toggle="collapse" data-target="#badges">
 		   List badges
 		</button>
 
-		<div id="badges" class="collapse in">
+		<div id="badges" class="collapse">
 			<ul>
 			<% @user.badges.each do |badge| %>
 				<li><%= badge.name %></li>
@@ -75,4 +74,4 @@
 	
 </div>
 
-<p><%= link_to 'Back', root_path %></p>
+<p><%= link_to 'Back', root_path, class: 'slick-btn' %></p>
