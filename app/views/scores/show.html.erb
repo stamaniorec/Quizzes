@@ -1,0 +1,27 @@
+<div class="text-center">
+	<p>
+		<strong>Score:</strong>
+		<%= @score.score %>
+		<br>
+		<% case @score.score %>
+		<% when 90..100 %>
+			<strong>Perfect</strong><br>
+			<p>Don't forget to share it with your friends by clicking on the buttons below!</p>
+		<% when 70..90 %>
+			<strong>Very Good</strong><br>
+			<p>Show your friends how Very Good you are by clicking on the buttons below.</p>
+		<% when 50..70 %>
+			<strong>Good</strong><br>
+			<p>A Good score! Boast about it to your friends by clicking on the buttons below.!</p>
+		<% when 25..50 %>
+			<strong>Try again</strong><br>
+			<p>You can do better!</p>
+		<% when 0..25 %>
+			<strong>Maybe some other time!</strong><br>
+			<p>You should probably try another topic.</p>
+		<% end %>
+	</p>
+	<%= social_share_button_tag("Got #{@score.score} on #{@score.quiz.name}", url: 'http://google.com/', popup: "true") %>
+
+	<%= link_to 'Back', quizzes_path %>
+</div>

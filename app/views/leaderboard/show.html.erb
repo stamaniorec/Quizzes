@@ -1,0 +1,18 @@
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#top-users">Top Users</a></li>
+    <li><a data-toggle="tab" href="#top-creators">Top Creators</a></li>
+    <li><a data-toggle="tab" href="#top-players">Top Players</a></li>
+</ul>
+<div class="tab-content">
+	<div id="top-users" class="tab-pane fade in active">
+		<%= render 'leaderboard', heading: 'Top Users', top_results: @top_general %>
+	</div>
+
+	<div id="top-creators" class="tab-pane fade">
+		<%= render 'leaderboard', heading: 'Top Creators', top_results: @top_creators %>
+	</div>
+
+	<div id="top-players" class="tab-pane fade">
+		<%= render 'leaderboard', heading: 'Top Players', top_results: @top_players %>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<%= bootstrap_form_for(@quiz) do |f| %>
+  <% if @quiz.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
+
+      <ul>
+      <% @quiz.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :shuffled, label: "Do you want to shuffle the questions and the answers?" %>
+  </div>
+
+  <div class="field">
+    <%= f.fields_for :questions do |question_builder| %>
+      <%= render 'question_fields', f: question_builder %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Add Question', f, :questions %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

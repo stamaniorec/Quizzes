@@ -1,8 +1,0 @@
-<div class="text-center">
-	<%= form_tag search_results_path, method: 'get', class: 'form-inline' do %>
-		<%= text_field_tag :quiz_search, params[:quiz_search], placeholder: 'Search by name', class: 'form-control' %>
-		<%= text_field_tag :user_search, params[:user_search], placeholder: 'Search by username', class: 'form-control' %>
-		<%= text_field_tag :question_search, params[:question_search], placeholder: "Search by question", class: 'form-control' %>
-		<%= submit_tag 'Search', class: 'btn btn-default' %>
-	<% end %>
-</div>

@@ -1,0 +1,9 @@
+<%= render 'advanced_search' %>
+
+<h3>Quizzes</h3>
+<% @results.each do |quiz| %>
+	<p>
+		<%= link_to quiz.name, quiz %>
+		<span> by <%= link_to(quiz.user.username, user_show_path(quiz.user.id)) %></span>
+	</p>
+<% end %>

@@ -1,0 +1,16 @@
+<h2>All comments - <%= comments.count %> submitted</h2>
+<% comments.each do |comment| %>
+	<div class="comment-wrapper clearfix">
+		<div class="pull-left">
+			<p class="comment-body"><%= comment.body %></p>
+			<p><small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong> by <%= link_to(comment.user.username, user_show_path(quiz.user.id)) if comment.user %></small></p>
+		</div>
+
+		<div class="btn-group pull-right">
+			<% if comment.user == current_user -%>
+				<%= link_to 'Edit', edit_quiz_comment_path(quiz, comment), class: 'slick-btn' %>
+				<%= link_to 'Destroy', [quiz, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: 'slick-btn' %>
+			<% end %>
+		</div>
+	</div>
+<% end %>

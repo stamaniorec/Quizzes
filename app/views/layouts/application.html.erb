@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quizzes0</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'search_links' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> 
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<!-- <div class="container"> -->
+		<header class="navbar navbar-default" role="navigation">
+		<div class="navbar-inner container">
+			<div class="navbar-header">
+				<div id="logo" class="navbar-brand"><%= link_to "Quizzes", root_path %></div>
+	            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	              <span class="sr-only">Toggle navigation</span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	            </button>
+        	</div>
+			<!-- <div class="container"> -->
+				<nav id="navbar" class="collapse navbar-collapse navbar-ex1-collapse">
+					<% if user_signed_in? %>
+						<ul class="nav navbar-nav navbar-right">
+							<li><%= link_to 'New Quiz', new_quiz_path %></li>
+							<li><%= link_to 'Profile', user_show_path(current_user.id) %></li>
+							<li><%= link_to 'Account', edit_user_registration_path %></li>
+							<li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+						</ul>
+					<% else %>
+						<ul class="nav navbar-nav pull-right">
+							<li><%= link_to 'Sign up', new_user_registration_path %></li>
+							<li><%= link_to 'Sign in', new_user_session_path %></li>
+						</ul>
+					<% end %>
+				</nav>
+			<!-- </div> -->
+  		</div>
+	</header>
+	<!-- </div> -->
+
+	<div class="container">
+		<div class="mobile-ad" align="center">
+			<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '400', height: '150' %>
+		</div>
+		<div class="mobile-ad" align="center">
+			<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '400', height: '150' %>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-sm-1 col-xs-1" align="center">
+				<div class="desktop-ad">
+					<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '150', height: '300' %>
+				</div>
+				<div class="desktop-ad">
+					<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '150', height: '300' %>
+				</div>
+			</div>
+			<div class="col-md-8 col-xs-10">
+				<% flash.each do |name, msg| %>
+					<%= content_tag(:div, msg, class: "alert alert-info") %>
+				<% end %>
+
+				<%= yield %>
+			</div>
+			<div class="col-md-2 col-sm-1" align="center">
+				<div class="desktop-ad">
+					<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '150', height: '300' %>
+				</div>
+				<div class="desktop-ad">
+					<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '150', height: '300' %>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-ad" align="center">
+			<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '400', height: '150' %>
+		</div>
+		<div class="mobile-ad" align="center">
+			<%= google_adsense_include_tag client: 'pub-1234', slot: '1234', width: '400', height: '150' %>
+		</div>
+		<div class="panel-footer">
+		    <h3>Quizzes</h3>
+		    <p>Developed by Stanimir Bogdanov and Dimitar Terziev</p>
+		</div>
+	</div>
+</body>
+</html>

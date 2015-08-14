@@ -1,0 +1,32 @@
+<h1 id="quiz-title"><%= @quiz.name %></h1>
+
+<%= bootstrap_form_for @score, html: { id: 'quiz_form' } do |f| %>
+	<% if @quiz_variant.nil? %>
+		<p>This quiz is empty.</p>
+	<% else %>
+		<%= f.form_group :answers do %>
+			<% @quiz_variant.questions.each_with_index do |question, index| %>
+				<p class="question-text"><%= question.prompt %></p>
+				<% correct_answer = -1 %>
+				<% question.answers.each_with_index do |answer, index2| %>
+					<%= f.radio_button "#{index}", index2, label: answer.text, checked: false, name: "answer[#{index}]" %>
+					<% correct_answer = index2 if answer.correct? %>
+				<% end %>
+				<input type="hidden" name="correct[<%= index %>]" value="<%= correct_answer %>">
+			<% end %>
+		<% end %>
+		<input type="hidden" name="quiz_id" value="<%= @quiz.id %>">
+		<input type="hidden" name="user_id" value="<%= current_user.nil? ? -1 : current_user.id %>">
+		<%= f.submit "Submit Quiz", data: { confirm: 'Are you sure? '} %>
+	<% end %>
+<% end %>
+
+<br />
+
+<% if @quiz.user == current_user %>
+	<%= link_to 'Edit', edit_quiz_path(@quiz), class: 'slick-btn' %>
+<% end %>
+<%= link_to 'Back', quizzes_path, class: 'slick-btn' %>
+
+<%= render 'comments/comments', comments: @quiz.comments, quiz: @quiz %>
+<%= render 'comments/form' %>
