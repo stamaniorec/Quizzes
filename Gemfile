@@ -4,8 +4,7 @@ ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgres as the database for Active Record
-gem 'pg'
-gem 'mysql2'
+
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -44,6 +43,13 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'sqlite3'
+  gem 'mysql2'
+end
+
+group :production do
+	gem 'pg'
 end
 
 #quiz_managment
@@ -66,3 +72,6 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '>= 3.2'
 
 gem 'bootstrap_form'
+
+gem 'rails_12factor', group: :production
+
