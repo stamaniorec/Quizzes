@@ -5,12 +5,12 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   pool: 5
   timeout: 5000
 
 development:
-  adapter: postgresql
+  adapter: mysql2
   host: 127.0.0.1
   encoding: utf8
   database: quiz_website
