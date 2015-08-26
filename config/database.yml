@@ -25,10 +25,3 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  host: localhost
-  database: db/production.sqlite3
