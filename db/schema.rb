@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20150421082019) do
 
   create_table "answers", force: :cascade do |t|
     t.string  "value",       limit: 255
-    t.boolean "is_correct",  limit: 1
-    t.boolean "anchored",    limit: 1
+    t.boolean "is_correct"
+    t.boolean "anchored"
     t.integer "question_id", limit: 4
   end
 
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150421082019) do
   create_table "badges_sashes", force: :cascade do |t|
     t.integer  "badge_id",      limit: 4
     t.integer  "sash_id",       limit: 4
-    t.boolean  "notified_user", limit: 1, default: false
+    t.boolean  "notified_user", default: false
     t.datetime "created_at"
   end
 
@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(version: 20150421082019) do
     t.integer  "user_id",       limit: 4
     t.string   "action_method", limit: 255
     t.integer  "action_value",  limit: 4
-    t.boolean  "had_errors",    limit: 1,     default: false
+    t.boolean  "had_errors",    default: false
     t.string   "target_model",  limit: 255
     t.integer  "target_id",     limit: 4
     t.text     "target_data",   limit: 65535
-    t.boolean  "processed",     limit: 1,     default: false
+    t.boolean  "processed",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20150421082019) do
   create_table "quizzes", force: :cascade do |t|
     t.string  "name",     limit: 50, null: false
     t.integer "user_id",  limit: 4
-    t.boolean "shuffled", limit: 1
+    t.boolean "shuffled"
   end
 
   create_table "sashes", force: :cascade do |t|
@@ -133,7 +133,7 @@ ActiveRecord::Schema.define(version: 20150421082019) do
     t.string   "votable_type", limit: 255
     t.integer  "voter_id",     limit: 4
     t.string   "voter_type",   limit: 255
-    t.boolean  "vote_flag",    limit: 1
+    t.boolean  "vote_flag"
     t.string   "vote_scope",   limit: 255
     t.integer  "vote_weight",  limit: 4
     t.datetime "created_at"
