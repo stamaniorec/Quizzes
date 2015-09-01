@@ -40,8 +40,12 @@ module Merit
       query_results = ActiveRecord::Base.connection.execute sql_query
       results = Array.new
       
-      query_results.each do |result|
-        results << { user_id: result.first, sum_points: result.last }
+      if Rails.env.development?
+        query_results.each do |result|
+          results << { user_id: result.first, sum_points: result.last }
+        end
+      elsif Rails.env.production?
+        results = query_results
       end
       
       results
