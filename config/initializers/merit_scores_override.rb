@@ -46,7 +46,10 @@ module Merit
         end
       elsif Rails.env.production?
         p '---------------------------------------------------------------------'
-        p query_results
+        query_results.each_row do |row|
+          p row
+        end
+        p 'done!!!'
         results = query_results
       end
       
