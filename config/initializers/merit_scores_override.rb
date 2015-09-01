@@ -28,7 +28,7 @@ module Merit
       }
 
       if options[:category]
-        sql_query += "AND merit_scores.category = \"#{options[:category]}\" "
+        sql_query += " AND merit_scores.category = \"#{options[:category]}\" "
       end
 
       sql_query += %{
@@ -45,6 +45,8 @@ module Merit
           results << { user_id: result.first, sum_points: result.last }
         end
       elsif Rails.env.production?
+        p '---------------------------------------------------------------------'
+        p query_results
         results = query_results
       end
       
