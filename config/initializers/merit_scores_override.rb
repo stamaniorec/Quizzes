@@ -47,10 +47,9 @@ module Merit
       elsif Rails.env.production?
         p '---------------------------------------------------------------------'
         query_results.each_row do |row|
-          p row
+          results << { user_id: row.first, sum_points: row.last }
         end
         p 'done!!!'
-        results = query_results
       end
       
       results
