@@ -28,7 +28,11 @@ module Merit
       }
 
       if options[:category]
-        sql_query += " AND merit_scores.category = \"#{options[:category]}\" "
+        if Rails.env.development?
+          sql_query += " AND merit_scores.category = \"#{options[:category]}\" "
+        elsif Rails.env.production?
+          sql_query += " AND merit_scores.category = '#{options[:category]}' "
+        end
       end
 
       sql_query += %{
